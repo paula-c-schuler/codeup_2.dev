@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>functions JS</title>
+</head>
+<body>
+<h1>Functions JS</h1>
+
+<script type="text/javascript">
+
+//***** #1 - Pass a variable to a function and concatenate result. 
+var myNameIs = 'Paula'; 
+
+function sayHello (name) 
+{
+	console.log ("Hello " + name);
+} 
+	
+sayHello(myNameIs);
+
+//***** #2 - generate random number, indicate if it is odd or not.
+
+var random = Math.floor((Math.random()*50)+1);
+
+function isOdd(random) {
+	var message = (random % 2 != 0) ? "The number passed to function isOdd() is an odd number." : "The number passed to isOdd() function is an even number.";
+	return message;
+}
+isOdd(random); 
+console.log(isOdd(random));
+
+</script>
+</body>
+</html>
