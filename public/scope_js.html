@@ -1,0 +1,41 @@
+//EXERCISE 4.4.2
+
+<html>
+<head>
+	<title>functions JS</title>
+</head>
+<body>
+<h1>Scope JS</h1>
+
+<script type="text/javascript">
+
+// Create a self-invoking function around the functions
+(function (){
+
+	var myNameIs = 'Paula'; 
+
+	function sayHello (name) 
+	{
+		console.log ("Hello " + name);
+	} 
+		
+	sayHello(myNameIs);
+
+	var random = Math.floor((Math.random()*50)+1);
+	console.log(random);
+
+	function isOdd () {
+		var message = (random % 2 != 0) ? "The number passed to function isOdd() is an odd number." : "The number passed to isOdd() function is an even number.";
+		return message;
+	}
+
+	isOdd(random); 
+	console.log(isOdd(random));
+	
+}());
+
+
+
+</script>
+</body>
+</html>
