@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>Objects Intro JS</title>
+	
+
+	
+</head>
+<body>
+	<h1>Objects Intro JS</h1>
+	<h2>Exercise 4.6.0 </h2>
+
+	<script type="text/javascript">
+
+	var person = {}; 
+	person.firstName = 'Paula';
+	person.lastName = 'Schuler';
+
+	alert('Hello ' + person.firstName + ' ' + person.lastName);
+
+// Say hello from the person object.
+// person.sayHello();
+	person.sayHello = function () {
+		console.log('Hey ' + this.firstName + ' ' + this.lastName);
+	};
+
+	person.sayHello();
+
+
+</script>
+
+</body>
+</html>
