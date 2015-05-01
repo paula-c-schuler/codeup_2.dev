@@ -12,12 +12,12 @@
 	person.firstName = 'Paula';
 	person.lastName = 'Schuler';
 
-	alert('Hello ' + person.firstName + ' ' + person.lastName);
+	console.log('Hello ' + person.firstName + ' ' + person.lastName);
 
 // Say hello from the person object.
 // person.sayHello();
 	person.sayHello = function () {
-		console.log('Hey ' + this.firstName + ' ' + this.lastName);
+		alert('Hey ' + this.firstName + ' ' + this.lastName);
 	};
 
 	person.sayHello();

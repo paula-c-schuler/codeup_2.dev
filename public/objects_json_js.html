@@ -1,0 +1,71 @@
+<html>
+<head>
+	<title>Objects JSON JS</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+// Create an array of objects that represent books.
+// Each book should have a title and an author.
+// The book author should be an object with a firstName and lastName.
+
+books = [
+	{
+        "title": "Charlotte\'s Webb",
+        "author":
+        {
+        	"firstName": "I",
+        	"lastName": "Forgot"
+        }
+    },
+    {
+        "title": "Harry Potter Series",
+        "author": 
+        {
+        	"firstName": "JK",
+        	"lastName": "Rowling"
+        }
+    },
+    {
+    	"title": "Nameless Book",
+    	"author": 
+    	{
+    		"firstName": "Cannot",
+    		"lastName": "Remember"
+    	}
+    },
+    {
+    	"title": "Truth",
+    	"author": 
+    	{
+    		"firstName": "Mahatma",
+    		"lastName": "Gandhi"
+    	}
+    },
+    {
+    	"title": "The Autobiography of Benjamin Franklin",
+    	"author": 
+    	{
+    		"firstName": "Benjamin",
+    		"lastName": "Franklin"
+    	}
+    }
+],
+console.log(books);
+
+
+
+// Loop through the array of books using .for
+// and print out the specified information about each one.
+i = 0;
+for (i = 0; i < books.length; i++)
+{
+	console.log("Book #" + [i]);
+	console.log("Title: " + books[i].title);
+	console.log("Author: " + books[i].author.firstName + " " + books[i].author.lastName);
+	console.log("---------------");
+}
+
+	</script>
+</body>
+</html>
