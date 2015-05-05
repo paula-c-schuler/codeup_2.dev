@@ -17,7 +17,6 @@ function logPlanets() {
 	console.log(planets); 
 } 
 
-
 console.log('Adding "The Sun" to the beginning of the planets array.');
 planets.unshift('Sun');
 logPlanets(); 
@@ -36,7 +35,7 @@ logPlanets();
 
 console.log('Finding and logging the index of "Earth" in the planets array.');
 planets.indexOf('Earth');
-console.log(index);
+console.log(planets.indexOf('Earth'));
 
 console.log('Using splice to remove the planet after Earth.');
 var index = planets.indexOf('Earth');

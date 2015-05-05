@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title>Objects Math JS</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+	// create a circle object with radius 3
+	var circle = 
+	{
+	    radius: 3,
+	    getArea: function () 
+	    {
+	        squaredRadius = Math.pow(circle.radius, 2);
+	        console.log(squaredRadius);
+	        area = 0;
+	        area = Math.PI * squaredRadius;
+	        console.log(area);
+	        return area;
+	    },
+	    getCircumference: function (radius) 
+	    {
+	    	diameter = radius + radius;
+	    	circumference = Math.PI(diameter);
+	    	console.log(circumference);
+	    	return circumference;
+	    },
+
+	    //If round is true, round the result to the nearest integer.
+	    logInfo: function (round) 
+	    {
+	        var rounded = Math.round(this.getArea());
+	        console.log(rounded);
+	        console.log('Area of a circle with radius: ' + this.radius + ' is: ' + rounded);
+	    }
+	};
+
+circle.logInfo(false);
+circle.logInfo(true);
+
+	</script>
+</body>
+</html>
