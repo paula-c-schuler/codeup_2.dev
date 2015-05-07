@@ -46,13 +46,16 @@
             detonationTimer--;
         }
 
-
         // TODO: When this function runs, it needs to
         // cancel the interval/timeout for updateTimer()
+        // Cancel the function that calls updateTimer()
         function defuseTheBOM()
         {
-            clearTimeout();
+            clearTimeout(intervalId);
+            alert("You saved the day!");
         }
+
+
 
         // Don't modify anything below this line!
         //
