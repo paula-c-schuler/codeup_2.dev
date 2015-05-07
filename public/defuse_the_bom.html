@@ -15,56 +15,71 @@
 .en-markup-crop-options div div:first-of-type {
     margin-left: 0px !important;
 }
-</style></head>
-<body>
-    <h2 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h2>
 
-    <button id="defuser">Defuse the BOM</button>
+.defuser {
+    COLOR THIE BUTTON HERQERFKNADFLA KDEF;DKF ADFK
+}
+</style>
+</head>
+    <body>
+        <h2 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h2>
 
-    <script>
-        var detonationTimer = 5;
-        var interval = 1000;
-        var min = 0;
-        var max = 5;
+        <button id="defuser">Defuse the BOM</button>
 
-        // Call updateTimer every second for countdown
-        var intervalId = setInterval(function () {
-            updateTimer();
-        }, interval);
+        <script>
+            var detonationTimer = 5;
+            var interval = 1000;
+            var min = 0;
+            var max = 5;
+            var userYes = prompt();
 
-        // TODO: This function needs to be called once every second
-        // Decreate the timer by one interval down to zero
-        function updateTimer()
-        {
-            if (detonationTimer == 0) {
-                alert('EXTERMINATE!');
-                document.body.innerHTML = '';
-            } else if (detonationTimer > 0) {
-                document.getElementById('timer').innerHTML = detonationTimer;
+            // Call updateTimer every second for countdown
+            var intervalId = setInterval(function () {
+                updateTimer();
+            }, interval);
+
+            // TODO: This function needs to be called once every second
+            // Decreate the timer by one interval down to zero
+            function updateTimer()
+            {
+                if (detonationTimer == 0) {
+                    document.body.innerHTML = '';
+                    document.body.style["background-color"] = "black";
+                    alert('EXTERMINATE!');
+
+                } else if (detonationTimer > 0) {
+                    document.getElementById('timer').innerHTML = detonationTimer;
+                }
+
+                detonationTimer--;
             }
 
-            detonationTimer--;
-        }
+            // TODO: When this function runs, it needs to
+            // cancel the interval/timeout for updateTimer()
+            // Cancel the function that calls updateTimer()
+            function defuseTheBOM()
+            {
+                clearTimeout(intervalId);
+                prompt("You defused the BOM! Type Y to play again or click Cancel.");
+            };
 
-        // TODO: When this function runs, it needs to
-        // cancel the interval/timeout for updateTimer()
-        // Cancel the function that calls updateTimer()
-        function defuseTheBOM()
-        {
-            clearTimeout(intervalId);
-            alert("You saved the day!");
-        }
-
-
-
-        // Don't modify anything below this line!
-        //
-        // This causes the defuseTheBOM() function to be called
-        // when the "defuser" button is clicked.
-        // We will learn about events in the DOM lessons
-        var defuser = document.getElementById('defuser');
-        defuser.addEventListener('click', defuseTheBOM, false);
-    </script>
+            // if user clicks OK on prompt, then refresh the page
+            function playAgain()
+            {
+                if (userYes) {
+                    location.reload(true);
+                }
+            }
+            playAgain(userYes);
+       
 
 
-</body></html>
+            // This causes the defuseTheBOM() function to be called
+            // when the "defuser" button is clicked.
+            var defuser = document.getElementById('defuser');
+            defuser.addEventListener('click', defuseTheBOM);
+        </script>
+
+
+    </body>
+</html>
