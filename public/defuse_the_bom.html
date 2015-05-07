@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)http://frontend.codeup.com/content/examples/javascript/defuse_the_bom.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Defuse the BOM</title>
+<style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+<body>
+    <h2 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h2>
+
+    <button id="defuser">Defuse the BOM</button>
+
+    <script>
+        var detonationTimer = 5;
+        var interval = 1000;
+        var min = 0;
+        var max = 5;
+
+        // Call updateTimer every second for countdown
+        var intervalId = setInterval(function () {
+            updateTimer();
+        }, interval);
+
+        // TODO: This function needs to be called once every second
+        // Decreate the timer by one interval down to zero
+        function updateTimer()
+        {
+            if (detonationTimer == 0) {
+                alert('EXTERMINATE!');
+                document.body.innerHTML = '';
+            } else if (detonationTimer > 0) {
+                document.getElementById('timer').innerHTML = detonationTimer;
+            }
+
+            detonationTimer--;
+        }
+
+
+        // TODO: When this function runs, it needs to
+        // cancel the interval/timeout for updateTimer()
+        function defuseTheBOM()
+        {
+            clearTimeout();
+        }
+
+        // Don't modify anything below this line!
+        //
+        // This causes the defuseTheBOM() function to be called
+        // when the "defuser" button is clicked.
+        // We will learn about events in the DOM lessons
+        var defuser = document.getElementById('defuser');
+        defuser.addEventListener('click', defuseTheBOM, false);
+    </script>
+
+
+</body></html>
