@@ -1,10 +1,23 @@
 <html>
 <head>
     <title>DOM: Query and Modify</title>
+    <style type="text/css">
+    button {
+        width: 50px;
+        height: 25px;
+    }
+
+    </style>
 </head>
 <body>
 
     <h1 id="main-header">Hello World!</h1>
+    
+    <button id="btn1">1</button>
+    <button id="btn2">2</button>
+    <button id="btn3">3</button>
+    <button id="btn4">4</button>
+
     <ul>
         <li data-dbid="1">Item 1</li>
         <li data-dbid="2">Item 2</li>
@@ -24,39 +37,65 @@
     </p>
 
     <script>
-        // todo: get the main header element by id
-        var mainHeader = document.getElementById("main-header");
+    "use strict";
 
         // todo: set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool";
-
-        // todo: get the sub header element by id
-        var subHeader = document.getElementById("sub-header");
+        var changeHeading = function (event) {
+            mainHeader.innerHTML = "JavaScript is Cool";
+        } 
 
         // todo: set the text color of subHeader to blue
         // subHeader.style["color"] = "blue";
-        subHeader.style.color = "blue"; 
-
-        // todo: get all list items
-        var listItems = document.getElementsByTagName("li");
+        var changeSubHeader = function(event) {
+            subHeader.style.color = "blue";
+        }
 
         // todo: set text color on every other list item to grey
         // todo: set text color of li with dbid = 1 to blue
-        for (var i = 0; i < listItems.length; i++) {
+        var changeListItems = function (event) {
+            for (var i = 0; i < listItems.length; i++) {
             if (i % 2 == 0) {
                 listItems[i].style['background-color'] = "#ddd";
             } 
             if (listItems[i].attributes["data-dbid"].value == "1") {
-                // console.log(listItems[i].attributes);
                 listItems[i].style.color = "blue";
             } 
-        };
+            }
+        }
+        
+        // todo: change the text in the first sub paragraph to "Mission Accomplished!"
+        var changeSubParagraphs = function(event) {
+            subParagraphs[0].innerHTML = "Mission Accomplished!";
+        }
+         
+
+        // add event listeners for four buttons
+        var btn1 = document.getElementById('btn1');
+        btn1.addEventListener('click', changeHeading, false);
+
+        var btn2 = document.getElementById('btn2');
+        btn2.addEventListener('click', changeSubHeader, false);
+
+        var btn3 = document.getElementById('btn3');
+        btn3.addEventListener('click', changeListItems, false);
+
+        var btn4 = document.getElementById('btn4');
+        btn4.addEventListener('click', changeSubParagraphs, false);
+
+        // todo: get the main header element by id
+        var mainHeader = document.getElementById("main-header");
+
+        // todo: get the sub header element by id
+        var subHeader = document.getElementById("sub-header");
+
+        // todo: get all list items
+        var listItems = document.getElementsByTagName("li");
         
         // todo: get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName("sub-paragraph");
 
-        // todo: change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerHTML = "Mission Accomplished!";
+
+
     </script>
 </body>
 </html>
