@@ -20,6 +20,16 @@
         margin-left: 0px !important;
     }
 
+    button {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        height: 20px;
+        width: 20px;
+        background-color: "red";
+    }
+  
+
     
     </style>
 </head>
@@ -34,50 +44,64 @@
             var min = 0;
             var max = 5;
             var userYes = prompt();
+            var defuser = document.getElementById("defuser");
 
-            // Call updateTimer every second for countdown
-            var intervalId = setInterval(function () {
-                updateTimer();
-            }, interval);
+
 
             // TODO: This function needs to be called once every second
-            // Decreate the timer by one interval down to zero
+            // Decrease the timer by one interval down to zero
+
             function updateTimer()
             {
                 if (detonationTimer == 0) {
                     document.body.innerHTML = '';
                     document.body.style["background-color"] = "black";
                     alert('EXTERMINATE!');
-
                 } else if (detonationTimer > 0) {
                     document.getElementById('timer').innerHTML = detonationTimer;
                 }
-
                 detonationTimer--;
             }
 
+
+
+
             // TODO: When this function runs, it needs to
-            // cancel the interval/timeout for updateTimer()
-            // Cancel the function that calls updateTimer()
+            // Cancel the interval/timeout for updateTimer()
+            // Thus, Cancel the function that calls updateTimer()
+
             function defuseTheBOM()
             {
                 clearTimeout(intervalId);
-                prompt("You defused the BOM! Type Y to play again or click Cancel.");
+                alert("You defused the BOM!");
             };
 
-            // if user clicks OK on prompt, then refresh the page
-            function playAgain()
+
+
+            function moveButton()
             {
-                if (userYes) {
-                    location.reload(true);
+                if (detonationTimer > 0) {
+                    console.log(defuser);
                 }
+
             }
-            playAgain(userYes);
-       
 
 
-            // This causes the defuseTheBOM() function to be called
-            // when the "defuser" button is clicked.
+            
+
+
+            // Call updateTimer every second for countdown
+
+            var intervalId = setInterval(function () {
+                updateTimer();
+            }, interval);
+
+
+
+
+            // Listens for "defuser button" click, 
+            // and calls the defuseTheBOM() function
+
             var defuser = document.getElementById('defuser');
             defuser.addEventListener('click', defuseTheBOM);
         </script>
