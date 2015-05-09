@@ -14,7 +14,6 @@ var result = "";
 //THIS ITERATION ADDS A LISTENER TO EVERY BUTTON
 //MAKE IT < BUTTONS.LENGTH.  = IS ASSIGNING. 
 for (var i = 0; i < buttons.length; i++){
-    console.log("logging button" + buttons[i]);
     buttons[i].addEventListener("click", listener, false);
 }
 
@@ -27,6 +26,7 @@ function listener (event){
     }
     else if (this.value === "="){
         evaluateFields();
+        clearFieldOperand();
     }
     else if (isNaN(this.value)){
         console.log(this.value + " isn't number");
@@ -43,7 +43,12 @@ function listener (event){
         fieldLeft.value += this.value;
         console.log(fieldLeft + " is fieldLeft");
     }
+}
+
+var clearFieldOperand = function (){
+    document.getElementById("operand").value = "";
 } 
+
 var clearFields = function (){
     document.getElementById("fieldLeft").value = "";
     document.getElementById("fieldRight").value = "";
