@@ -15,10 +15,10 @@
     //THIS ITERATION ADDS A LISTENER TO EVERY BUTTON 
     for (var i = 0; i < buttons.length; i++)
     { 
-        buttons[i].addEventListener("click", listener, false);
+        buttons[i].addEventListener("click", buttonInputsPopulated, false);
     }
 
-    function listener (event)
+    function buttonInputsPopulated (event)
     {
         var value = this.value; 
         if (this.value === "c")
