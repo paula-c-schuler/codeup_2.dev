@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Google Map API Exercise</title>
+
+	<style type="text/css">
+	#map-canvas {
+		width: 320px;
+		height: 480px;
+	}
+	</style>
+
+
+</head>
+<body>
+
+	<div id="map-canvas"></div>
+ 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKB6XP6nFJJv5GtKLiF0OecOP5VwOXA5o"></script>
+
+ <script type="text/javascript">
+
+
+
+function initialize() {
+  	var wyndhamLatlng = new google.maps.LatLng(29.4287799,-98.49252000000001);
+  	var mapOptions = {
+    zoom: 18,
+    center: wyndhamLatlng
+  	}
+  	var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+  	var marker = new google.maps.Marker({
+      position: wyndhamLatlng,
+      map: map,
+      title: 'Hello World!'
+    });  
+
+	var infowindow = new google.maps.InfoWindow({
+        content: 'cheesecake'
+    	});
+
+	infowindow.open(map,marker);
+  	
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+ 
+
+	</script>
+
+
+</body>
+</html>
