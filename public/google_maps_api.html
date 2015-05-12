@@ -28,15 +28,15 @@ function initialize() {
     center: wyndhamLatlng
   	}
   	var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
+  	var image = 'img/cheesecake.png';
   	var marker = new google.maps.Marker({
       position: wyndhamLatlng,
       map: map,
-      title: 'Hello World!'
+      icon: image
     });  
-
+  	
 	var infowindow = new google.maps.InfoWindow({
-        content: 'cheesecake'
+        content: 'Memorable Cheesecake at The Wyndham'
     	});
 
 	infowindow.open(map,marker);
