@@ -73,6 +73,7 @@
 			<br>
 			<input type="submit">
 			</p>
+		</form>
 
 		<form>
 			<p>Which are your lodging preferences?<br>
@@ -92,12 +93,12 @@
 			<input type="submit">
 			</p>
 		</form>
-			<p>Select Testing NOT WORKING ON SUBMIT. OTHER SUBMIT BUTTONS WORK
+		<form>
+			<p>Select Testing <br>
 			<label for="testing1">Check box for Yes</label>
 			<input type="checkbox" name="testing1" value="1" checked>
 			<br>
-			<!-- <input type="submit"> -->
-			
+			<input type="submit">
 			</p>
 		</form>
 	</body>
