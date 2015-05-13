@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Relative Positioning</title>
-    <style>
-        #container {
-            margin: 50px auto;
-            width: 500px;
-            height: 200px;
-            border: 1px solid #000;
-        }
-        .box {
-            background-color: #1969B2;
-            height: 100px;
-            width: 100px;
-            position: relative;
-            top: 10px;
-            right: 10px;
-        }
-    </style>
+	<title>Positioning Exercise</title>
+	<link rel="stylesheet" type="text/css" href="css/positioning.css">
 </head>
 <body>
-    <div id="container">
-        <div class="box"></div>
-    </div>
+	<img id="ribbon" src="/img/codeup-ribbon.png" alt="Codeup Ribbon">
+	<h1><a href="http://en.wikipedia.org/wiki/Visible_spectrum" target="_blank">Visible Spectrum Wavelengths</a></h1>
+		<!-- invisible outer box -->
+		<div id="container">
+			<!-- 6 colored boxes -->
+			<div id="redBox" class="box">620-750 nm</div>
+			
+			<div id="orangeBox">590-620 nm</div>
+			
+			<div id="yellowBox">
+				<p>570-590 nm</div>
+			
+			<div id="greenBox">
+				<p>495-570 nm</div>
+			
+			<div id="blueBox">
+				<p>450-495 nm</div>
+			
+			<div id="purpleBox">
+				<p>380-450 nm</div>
+			<!-- 6 codeup arrows -->
+			<img class="row1" src="/img/codeup-arrow.png" alt="Codeup Arrow">
+			<img class="row1 col2" src="/img/codeup-arrow.png" alt="Codeup Arrow">
+			<img class="row1 col3" src="/img/codeup-arrow.png" alt="Codeup Arrow">
+			<img src="/img/codeup-arrow.png">
+			<img class="col2" src="/img/codeup-arrow.png" alt="Codeup Arrow">
+			<img class="col3" src="/img/codeup-arrow.png" alt="Codeup Arrow">
+		</div>
 </body>
 </html>

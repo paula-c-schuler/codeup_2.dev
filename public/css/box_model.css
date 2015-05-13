@@ -18,15 +18,10 @@ h1{
 	color: purple;
 }
 
-table {
-
-}
-
-tr {
-	width: 400px;
-	height: auto;
-	background-color: purple;
-	
+#container {
+	position: relative;
+	width: 500px;
+	/*margin: 0 auto;*/
 }
 
 div{
@@ -35,11 +30,9 @@ div{
 	border: 1px solid black;
 	margin: 5px;
 	padding: 5px;
-}
-p{
+	position: relative;
+	float: left;
 	color: white;
-	margin-top: 4px;
-	margin-left: 2px;
 }
 
 

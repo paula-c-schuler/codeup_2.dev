@@ -4,44 +4,97 @@
 	<title>Google Map API Exercise</title>
 
 	<style type="text/css">
+
+    #container {
+        width: 600px;
+        margin: 0 auto;
+    }
+
+    #header {
+        width 600px;
+        margin: 0 auto;
+        background-color: #CADFAA;
+        text-align: center;
+
+    }
+
 	#map-canvas {
-		width: 320px;
-		height: 480px;
+		width: 600px;
+		height: 400px;
 	}
 	</style>
 
 
 </head>
 <body>
+    <div id="container">
+        <div id="header">Great Food</div>
+	   <div id="map-canvas"></div>
+    </div>
 
-	<div id="map-canvas"></div>
+
+    
  	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKB6XP6nFJJv5GtKLiF0OecOP5VwOXA5o"></script>
+    <script type="text/javascript">
+    
 
- <script type="text/javascript">
+    <!-- for each string, geocode the address and place a pin -->
+    var geocoder = new google.maps.Geocoder();
+
+    addressesArray = [{
+        address: "111 E. Pecan St., San Antonio, TX, 78205", 
+        callback: geoCallback
+    }, { 
+        address: "830 NW Loop 410, San Antonio, TX 78216",
+        callback: geoCallback
+    }, {
+        address:  "160 E Houston St, San Antonio, TX 78205",
+        callback: geoCallback
+    }];
+
+    addressesArray.forEach(function(addressArray, index) {
+        geocoder.geocode( { 'address': addressesArray[i]}, function(results,status) {
+            addressesArray.callback(results, status);
+        }
+    }
 
 
+    // for (var i = 0; i < addressesArray.length; i++) {
+    //     geocoder.geocode( { 'address': addressesArray[i]}, function(results,status) {
+    //     if (status == google.maps.GeocoderStatus.OK) {
+    //         var mapOptions = {
+    //             zoom: 9,
+    //             center: results[0].geometry.location
+    //         }
+    //         var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);   
+    //     }
+    //     });
+    // }
 
-function initialize() {
-  	var wyndhamLatlng = new google.maps.LatLng(29.4287799,-98.49252000000001);
-  	var mapOptions = {
-    zoom: 18,
-    center: wyndhamLatlng
-  	}
-  	var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-  	var image = 'img/cheesecake.png';
-  	var marker = new google.maps.Marker({
-      position: wyndhamLatlng,
-      map: map,
-      icon: image
-    });  
-  	
-	var infowindow = new google.maps.InfoWindow({
-        content: 'Memorable Cheesecake at The Wyndham'
-    	});
+    function initialize() {
+      	var wyndhamLatLng = new google.maps.LatLng(29.4287799,-98.49252000000001);
+      	var mapOptions = {
+        zoom: 9,
+        center: wyndhamLatLng
+      	}
+      	var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+      	var image = '';
+      	var marker = new google.maps.Marker({
+          position: wyndhamLatLng,
+          map: map,
+        });  
 
-	infowindow.open(map,marker);
-  	
-}
+        var wyndhamContent = "<h4> Memorable Cheesecake, The Wyndham</h4>";
+
+        // Open info window on mouseover of pin, and close upon click of pin
+      	google.maps.event.addListener(marker, 'mouseover', function() {
+                infowindow.setContent(wyndhamContent);
+                infowindow.open(map,marker);
+            });
+            google.maps.event.addListener(marker, 'click', function() {
+                infowindow.close(map,marker);
+            }); 
+    }
 
 google.maps.event.addDomListener(window, 'load', initialize);
 

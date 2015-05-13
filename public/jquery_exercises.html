@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- EXERCISE 5.0 jQuery intro -->
+<html>
+<head>
+	<title>jquery exercises</title>
+</head>
+	<body>
+		<h1 id="headline" class="headline">Pets</h1>
+		<p id="firstP" class="paragraph"> Pets are great. Right now I have fish named:  </p>
+		<ul id="fish">
+			<li class="names" id="1">Da Vinci</li>
+			<li class="names" id="2">Dardago</li>
+			<li class="names" id="3">Drogo</li>
+			<li class="names" id="4">Meenie</li>
+			<li class="names" id="5">Mienie</li>
+			<li class="names" id="6">Moe</li>
+			<li class="names" id="7">Pac-Man</li>
+			<li class="names" id="8">Unnamed river shrimp x 2</li>
+		</ul>	
+		<p id="secondP" class="paragraph">Pet chores include:</p>
+		<ul id="fish2">
+			<li class="chores" id="feed">Feeding a few times a day</li>
+			<li class="chores" id="water">Changing water once a week or every other week</li>
+			<li class="chores" id="filter">Changing the filter at least once a month</li>
+			<li class="chores" id="shop">Buying supplies now and then</li>
+		</ul>
+
+		<script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			alert( 'The DOM has finished loading!' );
+			var firstP = $('#firstP');
+			alert(firstP.html());
+			var eight = $('#8');
+			alert(eight.html());
+		});
+		</script>
+	</body>
+</html>
