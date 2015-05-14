@@ -5,7 +5,7 @@
 	<title>jquery exercises</title>
 </head>
 	<body>
-		<h1 id="top" class="top">Pets AND More Pets</h1>
+		<h1 id="top" class="top">Pets and More Pets</h1>
 		<p id="firstP" class="paragraph"> Pets are great. Right now I have fish named:  </p>
 		<ul id="fish1">
 			<li class="names" id="1">Da Vinci</li>
@@ -27,11 +27,31 @@
 
 		<script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript">
-		$(document).ready(function() {
-			alert( 'The DOM has finished loading!' );
-			var color = $('h1, p, li').css("background-color", "#FFFF00");
-
+		$(document).ready(function() 
+		{
+			var success = "success"
+			alert( 'The DOM has finished loading!' ); 
+			$('h1').click(function() 
+			{
+				console.log(success);
+				$(this).css("background-color", "blue");
+			});
+			$('p').dblclick(function() 
+			{
+				console.log(success);
+				$('p').css("font-size", "18px");
+			});
+			$('li').hover(
+				function() 
+				{
+					$(this).css("color", "red");
+				},
+				function () 
+				{
+					$(this).css("color", "white");
+				});
 		});
+		
 		</script>
 	</body>
 </html>
