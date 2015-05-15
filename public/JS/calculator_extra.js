@@ -1,7 +1,9 @@
 // function () {
 //     "use strict";
 
-// EXERCISE 4.7.3
+// EXERCISE 4.7.3 Javascript Calculator
+// Extra features and changes include:
+// Percent button
 
     var buttons = document.getElementsByClassName("buttons");     
 
@@ -16,7 +18,7 @@
     for (var i = 0; i < buttons.length; i++)
     { 
         buttons[i].addEventListener("click", buttonInputsPopulated, false);
-        console.log("Listening");
+        // console.log("Listening");
     }
 
     function buttonInputsPopulated (event)
@@ -24,31 +26,34 @@
         var value = this.value; 
         if (this.value === "c")
         {
-            clearFields();
+            clearAll();
         }
         else if (this.value === "=")
         {
-            evaluateFields();
-            clearFieldOperand();
+            console.log(this.value);
+            var equal = this.value;
+            console.log(equal = " is equal");
+            evaluate();
+            // cleardisplay();
         }
 
         else if (this.value === "%")
         {
-            console.log("percent can be heard");
-            // document.getElementById("display").value *= 100;
+            percentNumber = document.getElementById("display").value;
+            percent (percentNumber);
+            
         }
-        else if (isNaN(this.value))
+        else if (this.value === "+" || this.value === "*" || this.value === "-" || this.value === "/")
         {
             operand = this.value;
-            document.getElementById("operand").value = operand;
+            document.getElementById("display").value += operand;
         }
-        else if (operand != "")
-        {
-            fieldRight.value += this.value;
-        } 
-        else if (this.value === "-")
+        else if (this.value)
         {
             console.log(this.value);
+            document.getElementById("display").value += this.value;
+            
+
         }
 
 
@@ -58,59 +63,69 @@
         }
     }
 
-    var clearFieldOperand = function ()
+    var cleardisplay = function ()
     {
-        document.getElementById("operand").value = "";
+        document.getElementById("display").value = "";
     } 
 
-    var clearFields = function ()
+    var clearAll = function ()
     {
         location.reload(true); 
     }
 
     var percent = function()
     {
-        this.value *= 100;
-    }
+        console.log(percentNumber);
+        percentNumber /= 100;
+        console.log(percentNumber);
+        document.getElementById("display").value = percentNumber;
+}
 
-    var negative = function()
+    var displayString = function()
     {
-        if (display === 0)
-        {
-            alert("syntax error, please clear");
-        }  
-        if (display > 0)
-        {
-            display.value = parseInt(display.value);
-            console.log (display.value);
-            display.value = parseInt("-" + display.value);
-            console.log ("Display negative value is " + display.value);
-        }
+        console.log(this.value + " is in displayString");
     }
 
     
-
-    var evaluateFields = function()
+// NEED TO EVALUATE THE STRING, BUT DETERMINE OPERAND? 
+    var evaluate = function()
     {
-        operand = document.getElementById("operand");
-        if (operand.value == "+")
-        {
-            display.value = parseInt(display.value) + parseInt(fieldRight.value);
-            fieldRight.value = "";
-        } else if (operand.value == "-")
-        {
-            display.value = parseInt(display.value) - parseInt(fieldRight.value);
-            fieldRight.value = "";
-        } else if (operand.value == "*")
-        {
-            display.value = parseInt(display.value) * parseInt(fieldRight.value);
-            fieldRight.value = "";
-        } else if (operand.value == "/")
-        {
-            display.value = parseInt(display.value) / parseInt(fieldRight.value);
-            fieldRight.value = "";
-        } 
+        var display = document.getElementById("display").value;
+        console.log(display);
+        var result = eval(display);
+        console.log(result);
+        document.getElementById("display").value = result;
+        // if (this.value == "+")
+        // {
+        //     console.log(document.getElementById("display" + " IS IN EVALUATE"));
+        //     // display.value = eval(display.value);
+            
+        // } else if (operand.value == "-")
+        // {
+        //     display.value = parseInt(display.value) - parseInt(fieldRight.value);
+            
+        // } else if (operand.value == "*")
+        // {
+        //     display.value = parseInt(display.value) * parseInt(fieldRight.value);
+            
+        // } else if (operand.value == "/")
+        // {
+        //     display.value = parseInt(display.value) / parseInt(fieldRight.value);
+            
+        // } 
     }
-// }
 
-
+// var negative = function()
+//     {
+//         if (display === 0)
+//         {
+//             alert("syntax error, please clear");
+//         }  
+//         if (display > 0)
+//         {
+//             display.value = parseInt(display.value);
+//             console.log (display.value);
+//             display.value = parseInt("-" + display.value);
+//             console.log ("Display negative value is " + display.value);
+//         }
+    // }

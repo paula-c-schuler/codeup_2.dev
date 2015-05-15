@@ -39,23 +39,15 @@ html {
   padding-left: 2px;
 }
     
-#display, #operand, #fieldRight{
+#display {
   height: 40px;
   width: 60.5px;
-  text-align: right;
-  /*border-radius: 5px;*/
+  text-align: center;
   border-top: 2px #fff;
   padding-left: 2px #6C6C6C;
   padding-right: 2px #fff;
   padding-bottom: 2px #6C6C6C;
 
-  
-}
-
-#operand {
-  height: 40px;
-  width: 0px;
-  text-align: center;
   
 }
 
@@ -78,6 +70,3 @@ html {
   width: 48%;
 }
 
-#btnInteger {
-  font-size: 10px;
-}
