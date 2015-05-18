@@ -1,2 +1,2 @@
-This repository holds exercises done in the first front end web development bootcamp with Codeup in San Antonio, TX. 
-Languages include: HTML5, CSS, JavaScript, jQuery. 
+Exercises for web development boot camp at Codeup in San Antonio, Texas, 2015. 
+Languages: HTML, CSS, JavaScript, jQuery and PHP.
