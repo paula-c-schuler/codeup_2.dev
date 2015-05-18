@@ -11,19 +11,22 @@
     var spot2Holder = "";
     var operand = "";
     var display = document.getElementById("display");
-    var fieldRight = document.getElementById("fieldRight");
     var result = "";
+    var unacceptable = ["a", "b", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n",
+    "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-    //THIS ITERATION ADDS A LISTENER TO EVERY BUTTON 
+    //This iteration adds an event listener to every class of buttons. 
     for (var i = 0; i < buttons.length; i++)
     { 
         buttons[i].addEventListener("click", buttonInputsPopulated, false);
         // console.log("Listening");
     }
 
+    // Determines value of input and determines next action.
     function buttonInputsPopulated (event)
     {
-        var value = this.value; 
+        var value = this.value;
+
         if (this.value === "c")
         {
             clearAll();
@@ -51,12 +54,8 @@
         else if (this.value)
         {
             console.log(this.value);
-            document.getElementById("display").value += this.value;
-            
-
+            document.getElementById("display").value += this.value;        
         }
-
-
         else 
         {
             display.value += this.value;
@@ -87,45 +86,11 @@
     }
 
     
-// NEED TO EVALUATE THE STRING, BUT DETERMINE OPERAND? 
+    // Evaluates the string, allows the result to be used in next calculation.
     var evaluate = function()
     {
         var display = document.getElementById("display").value;
-        console.log(display);
         var result = eval(display);
-        console.log(result);
         document.getElementById("display").value = result;
-        // if (this.value == "+")
-        // {
-        //     console.log(document.getElementById("display" + " IS IN EVALUATE"));
-        //     // display.value = eval(display.value);
-            
-        // } else if (operand.value == "-")
-        // {
-        //     display.value = parseInt(display.value) - parseInt(fieldRight.value);
-            
-        // } else if (operand.value == "*")
-        // {
-        //     display.value = parseInt(display.value) * parseInt(fieldRight.value);
-            
-        // } else if (operand.value == "/")
-        // {
-        //     display.value = parseInt(display.value) / parseInt(fieldRight.value);
-            
-        // } 
     }
 
-// var negative = function()
-//     {
-//         if (display === 0)
-//         {
-//             alert("syntax error, please clear");
-//         }  
-//         if (display > 0)
-//         {
-//             display.value = parseInt(display.value);
-//             console.log (display.value);
-//             display.value = parseInt("-" + display.value);
-//             console.log ("Display negative value is " + display.value);
-//         }
-    // }
