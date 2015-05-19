@@ -1,11 +1,12 @@
 $(document).ready(function() {
     $('#linkToggle').click(function(event) {
         event.preventDefault();
-        $('dd').toggle();         
+        $('dd').fadeOut(2000);         
     });
 
-    $('ul').each(function(index, element) {
-		$(this).children().first().css("font-weight", "bold");
+    $('h3').click(function(event) {
+		console.log(this);
+		$('h3').next().fadeToggle(4000);
 	});
 
     $('li').click(function(event) {
