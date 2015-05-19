@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- EXERCISE 5.4.4 -->
 <!-- saved from url=(0070)http://frontend.codeup.com/content/examples/html/animate_exercise.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
     <title>Animate</title>
@@ -53,24 +54,43 @@
     <script src="./animate_files/jquery.min.js"></script>
     <script>
 
-        (function(){
+    $(document).ready (function() {
 
             'use strict';
 
             // todo: Move the box by 100 pixels from the left
+            $("#btn-move").click(function() {
+                $("#animate-box").animate({left: "100px"}, 2000);
+            });
 
             // todo: Scale the width up by 50%
+            $("#btn-scale-down").click(function() {
+                $("#animate-box").animate({width: "+=125px"}, 2000);
+            });
 
             // todo: Use opacity to make the box invisible
+            $("#btn-disappear").click(function() {
+                $("#animate-box").animate({opacity: "0"}, 2000);
+            });
 
             // todo: Make the box appear again with opacity
+            $("#btn-show").click(function() {
+                $("#animate-box").animate({opacity: "1"}, 2000);
+            });
 
             // todo: Once all is done see if you can chain all the animations
             // to happen with the `Animate all` button.
             // Refresh to start over before hitting the button.
-            
+            $("#btn-all").click(function() {
+                $("#animate-box")
+                .animate({left: "100px"}, 2000)
+                .animate({width: "+=125px"}, 2000)
+                .animate({opacity: "0"}, 2000)
+                .animate({opacity: "1"}, 2000);
+            });
+ });           
 
-        })();
+    // })();
     
     </script>
 
