@@ -8,10 +8,6 @@ $(document).ready(function() {
 		console.log(this);
 		$('h3').next().fadeToggle(4000);
 	});
-
-    $('li').click(function(event) {
-        $(this).parent().hide();
-    });
 });
 
 
