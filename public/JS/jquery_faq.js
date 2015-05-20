@@ -1,12 +1,13 @@
 $(document).ready(function() {
     $('#linkToggle').click(function(event) {
         event.preventDefault();
-        $('dd').fadeOut(2000);         
+        alert("DOM loaded.");
+        $('dd').slideDown(2000);         
     });
 
     $('h3').click(function(event) {
 		console.log(this);
-		$('h3').next().fadeToggle(4000);
+		$('h3').next().slideUp(4000);
 	});
 });
 
