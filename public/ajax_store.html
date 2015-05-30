@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <!-- saved from url=(0070)http://frontend.codeup.com/content/examples/javascript/ajax_store.html -->
+<!-- EXERCISE 05.6.1  -->
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
     <title>Online Store</title>
-    <style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
-    .en-markup-crop-options {
-        top: 18px !important;
-        left: 50% !important;
-        margin-left: -100px !important;
-        width: 200px !important;
-        border: 2px rgba(255,255,255,.38) solid !important;
-        border-radius: 4px !important;
+    <style>
+
+    th {
+        width: 75px;
+        height: 15px;
+        border: 1px solid black;
     }
 
-    .en-markup-crop-options div div:first-of-type {
-        margin-left: 0px !important;
+    tr {
+        border: 1px solid black;
+        height: 15px;
     }
+
+    td {
+        width: 75px;
+        height: 15px;
+        border: 1px solid black;
+    }
+
     </style>
 </head>
 <body>
+<div id="container">
 
 <h1>My Tool Store</h1>
 
@@ -35,7 +42,7 @@
     <tbody id="insertProducts"></tbody>
 
 </table>
-
+</div>
 <script src="./ajax_store_files/jquery.min.js"></script>
 
 <script>
@@ -43,24 +50,32 @@
     // The above function creates scope for ajax data and functions
     
     // TODO: Create an ajax GET request for /data/inventory.json
-    var inventory = $.ajax("/data/inventory.json");
-    
-
-    $("#insertProducts").load();
-     console.log (inventory);
-
-
-
-
-
-
     // TODO: Take the data from inventory.json and append it to the products table
     //       HINT: Your data should come back as a JSON object; use console.log() to inspect
     //             its contents and fields
     //       HINT: You will want to target #insertProducts for your new HTML elements
+
+    // My notes for study: 
+    // "Data" looks for the responseTxt, 
+    // not all the other properties of the returned object. 
+    // "Data" is in scope in the function below.
+    var inventory = $.get("/data/inventory.json");
+    inventory.done(function(data) {
+            htmlString = "";
+        $(data).each(function(index, element) {
+            console.log(data);
+            htmlString += "<tr>";
+            htmlString += "<td>" + element.title + "</>";
+            htmlString += "<td>" + element.quantity + "</>";
+            htmlString += "<td>" + element.price + "</>";
+            htmlString += "<td>" + element.categories + "</>";
+            htmlString += "</tr>";
+            console.log(htmlString);
+
+        })
+        $("#insertProducts").html(htmlString);
+    })    
 })();
 </script>
-
-
-
-</body></html>
+</body>
+</html>
