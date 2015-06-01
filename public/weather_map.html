@@ -1,21 +1,16 @@
-<!-- EXERCISE  -->
+<!-- EXERCISE 5.6.2 First Part complete, today's weather data populates. -->
 <!DOCTYPE html>
 <html>
 <head>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/weather_map.css">
 	<title>weather map</title>
 	
-	<!-- <link rel="stylesheet" type="text/css" href="/css/weather_map.css"> -->
-	<!-- /*<style type="text/css"></style> -->
-
 </head>
 <body>
-<div id="wrapper">
+<div id="container">
 	
-	
-
-
-
-
 </div>
 
 <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
@@ -28,13 +23,11 @@
 	weatherToday.done(function(data) {
 		
 	    console.log(data);
-	    $("#wrapper").html(
+	    $("#container").html(
 	    	"<h2>Weather for: " + data.name + "</h2>" + 
 	    	"<li>Temp is: " + data.main.temp + "</li>" +
 	    	"<li>Humidity is: " + data.main.humidity + "</li>" +
 	    	"<li>Wind speed is: " + data.wind.speed + "</li>");
-
-
 	});
 
 	console.log(weatherToday);
