@@ -1,0 +1,31 @@
+#container {
+	width: 800px;
+	margin: 0 auto;
+	background-color: #9EEAFA;
+}
+
+/*#background {
+	width: 622px;
+	height: 275px;
+	padding: 25px;
+	background-color: #9EEAFA;
+}
+
+#boxRow {
+	height:177px;
+	top: 200px;
+	background-color: #E9ECEC;
+}
+.weatherboxes {
+	width: 200px;
+	height: 180px;
+	background-color: #E9ECEC;
+	top: 80px;
+	border: 1px solid black;
+	float: left;
+
+}*/
+
+#box1 {
+	left: 20px;
+}
