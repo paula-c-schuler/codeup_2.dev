@@ -1,4 +1,5 @@
 <!-- EXERCISE 5.6.2 First Part complete, today's weather data populates. -->
+<!--  -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,28 +11,50 @@
 </head>
 <body>
 <div id="container">
+	<h2>Weather Application</h2>
+	<h3>San Antonio</h3>
+	<div id="row-forecast">
+
+	</div>
+	<div id="canvas">
+
+	</div>
 	
+
 </div>
 
 <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
-	var weatherToday = $.get("http://api.openweathermap.org/data/2.5/weather", {
+	var weather = $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
 		"APPID": "d00068236e1ca2110cc252b202794ecb",
-		"q":     "Castle Hills, TX",
-		"units": "Imperial"
+		"lat":    29.423017,
+    	"lon":   -98.48527,
+    	"units": "imperial",
+		"cnt": 3
 	});
-	weatherToday.done(function(data) {
+	weather.done(function(data) {
+		htmlString = "";
+		console.log(weather);
+		console.log(data.list);
+
+		for ( i = 0; i < 3; i++) {
+		skyIcon = data.list[i].weather[0].icon;
+		console.log(skyIcon);
 		
-	    console.log(data);
-	    $("#container").html(
-	    	"<h2>Weather for: " + data.name + "</h2>" + 
-	    	"<li>Temp is: " + data.main.temp + "</li>" +
-	    	"<li>Humidity is: " + data.main.humidity + "</li>" +
-	    	"<li>Wind speed is: " + data.wind.speed + "</li>");
+		htmlString += "<div class='weatherboxes'>";
+		htmlString += "<p><span class='bold' id='temp'>" + data.list[i].temp.max + "°/" + data.list[i].temp.min + "°" + "</span></p>";
+		htmlString += "<p id='image'><img src=http://openweathermap.org/img/w/" + skyIcon + ".png></p>"; 
+		htmlString += "<p>" + "<span class='bold'>Clouds:</span> " + data.list[i].weather[0].main + "</p>";
+		htmlString += "<p>" + "<span class='bold'>Humidity:</span> " + data.list[i].humidity + "</p>";
+		htmlString += "<p>" + "<span class='bold'>Wind:</span> " + data.list[i].speed + "</p>";
+		htmlString += "<p>" + "<span class='bold'>Pressure:</span> " + data.list[i].pressure + "</p>";
+	    htmlString += "</div>";
+	    $("#row-forecast").html(htmlString);
+	    }	
 	});
 
-	console.log(weatherToday);
-	weatherToday.fail(function() {
+	console.log(weather);
+	weather.fail(function() {
 		alert("fail");
 	});
 
