@@ -1,9 +1,10 @@
 <!-- EXERCISE 5.6.2 First Part complete, today's weather data populates. -->
-<!--  -->
+<!-- EXERCISE 5.6.2 Refactored for three-day forecast. -->
+<!-- EXERCISE 5.6.2 Refactored: User can change latitude, longitude for forecast -->
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- Latest compiled and minified CSS -->
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/css/weather_map.css">
 	<title>weather map</title>
@@ -12,10 +13,15 @@
 <body>
 <div id="container">
 	<h2>Weather Application</h2>
-	<h3>San Antonio</h3>
+	<h3 id="location"></h3>
 	<div id="row-forecast">
 
 	</div>
+	 <form id="search-form"> 
+		<input type="text" id="latitude" name="latitude" placeholder="Enter Latitude">
+		<input type="text" id="longitude" name="longitude" placeholder="Enter Longitude">
+		<input type="submit" id="submit" name="submit">
+	</form>
 	<div id="canvas">
 
 	</div>
@@ -25,38 +31,62 @@
 
 <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
-	var weather = $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
-		"APPID": "d00068236e1ca2110cc252b202794ecb",
-		"lat":    29.423017,
-    	"lon":   -98.48527,
-    	"units": "imperial",
-		"cnt": 3
-	});
-	weather.done(function(data) {
-		htmlString = "";
-		console.log(weather);
-		console.log(data.list);
+	
+	var runGetWeather = function(lat, lon) {
+		console.log(lat);
+		console.log(lon);
+		$.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+			"APPID": "d00068236e1ca2110cc252b202794ecb",
+			"lat":   lat,
+	    	"lon":   lon,
+	    	"units": "imperial",
+			"cnt": 3
+		}).done(function(data) {
+			htmlString = "";
+			console.log(data);
+			console.log(data.list);
 
-		for ( i = 0; i < 3; i++) {
-		skyIcon = data.list[i].weather[0].icon;
-		console.log(skyIcon);
+			for ( i = 0; i < 3; i++) {
+			skyIcon = data.list[i].weather[0].icon;
+			
+			htmlString += "<div class='weatherboxes'>";
+			htmlString += "<p><span class='bold' id='temp'>" + data.list[i].temp.max + "°/" + data.list[i].temp.min + "°" + "</span></p>";
+			htmlString += "<p id='image'><img src=http://openweathermap.org/img/w/" + skyIcon + ".png></p>"; 
+			htmlString += "<p>" + "<span class='bold'>Clouds:</span> " + data.list[i].weather[0].main + "</p>";
+			htmlString += "<p>" + "<span class='bold'>Humidity:</span> " + data.list[i].humidity + "</p>";
+			htmlString += "<p>" + "<span class='bold'>Wind:</span> " + data.list[i].speed + "</p>";
+			htmlString += "<p>" + "<span class='bold'>Pressure:</span> " + data.list[i].pressure + "</p>";
+		    htmlString += "</div>";
+		    $("#row-forecast").html(htmlString);
+		    }	
+		}).fail(function() {
+			alert("fail");
+		});
+	}
+
+
+	lat = 29.423017;
+	lon = -98.48527;
+	console.log(lat);
+	console.log(lon);
+	runGetWeather(lat, lon);
+
+
+	$("#search-form").submit(function (e) {
+		// below prevents form's sending data to server
+		e.preventDefault();
+		var lat = $("#latitude").val();
+		var lon = $("#longitude").val();
+
+		$("#location").html("Latitude: " + lat + "  Longitude: " + lon);
 		
-		htmlString += "<div class='weatherboxes'>";
-		htmlString += "<p><span class='bold' id='temp'>" + data.list[i].temp.max + "°/" + data.list[i].temp.min + "°" + "</span></p>";
-		htmlString += "<p id='image'><img src=http://openweathermap.org/img/w/" + skyIcon + ".png></p>"; 
-		htmlString += "<p>" + "<span class='bold'>Clouds:</span> " + data.list[i].weather[0].main + "</p>";
-		htmlString += "<p>" + "<span class='bold'>Humidity:</span> " + data.list[i].humidity + "</p>";
-		htmlString += "<p>" + "<span class='bold'>Wind:</span> " + data.list[i].speed + "</p>";
-		htmlString += "<p>" + "<span class='bold'>Pressure:</span> " + data.list[i].pressure + "</p>";
-	    htmlString += "</div>";
-	    $("#row-forecast").html(htmlString);
-	    }	
+		console.log("in submit listener");
+		console.log(lat);
+		console.log(lon);    
+		runGetWeather(lat, lon);
 	});
 
-	console.log(weather);
-	weather.fail(function() {
-		alert("fail");
-	});
+
 
 </script>
 </body>
