@@ -17,21 +17,30 @@
 	<div id="row-forecast">
 
 	</div>
-	 <form id="search-form"> 
+	
+	<form id="search-form"> 
 		<input type="text" id="latitude" name="latitude" placeholder="Enter Latitude">
 		<input type="text" id="longitude" name="longitude" placeholder="Enter Longitude">
 		<input type="submit" id="submit" name="submit">
 	</form>
-	<div id="canvas">
+	
+	<div id="map-canvas">
 
 	</div>
-	
-
 </div>
 
 <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKB6XP6nFJJv5GtKLiF0OecOP5VwOXA5o"></script>
 <script type="text/javascript">
-	
+
+$(document).ready(function() {
+	google.maps.event.addDomListener(window, 'load', initialize);
+});
+
+	// declare variable map for global scope
+	var map; 
+
+	// Main function that gets weather API data and parses for display. 
 	var runGetWeather = function(lat, lon) {
 		console.log(lat);
 		console.log(lon);
@@ -48,7 +57,7 @@
 
 			for ( i = 0; i < 3; i++) {
 			skyIcon = data.list[i].weather[0].icon;
-			
+			$("h3").html(data.city.name);
 			htmlString += "<div class='weatherboxes'>";
 			htmlString += "<p><span class='bold' id='temp'>" + data.list[i].temp.max + "°/" + data.list[i].temp.min + "°" + "</span></p>";
 			htmlString += "<p id='image'><img src=http://openweathermap.org/img/w/" + skyIcon + ".png></p>"; 
@@ -67,13 +76,13 @@
 
 	lat = 29.423017;
 	lon = -98.48527;
-	console.log(lat);
-	console.log(lon);
+	// console.log(lat);
+	// console.log(lon);
 	runGetWeather(lat, lon);
 
-
+	// Listens to user and calls ajax request with new user input
 	$("#search-form").submit(function (e) {
-		// below prevents form's sending data to server
+		// Below prevents form's sending data to server
 		e.preventDefault();
 		var lat = $("#latitude").val();
 		var lon = $("#longitude").val();
@@ -86,6 +95,16 @@
 		runGetWeather(lat, lon);
 	});
 
+	// Parameters for maps, function called after document.ready
+	function initialize() {
+	var mapOptions = {
+      zoom: 10,
+      center: { lat: 29.4284595, lng: -98.492433 }
+    };
+
+// Renders the map
+    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+	}
 
 
 </script>

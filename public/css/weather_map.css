@@ -35,4 +35,8 @@
 	top: 0px;
 }
 
-
+#map-canvas {
+	width: 765px;
+	height: 400px;
+	top: 15px;
+}
