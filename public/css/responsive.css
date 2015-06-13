@@ -1,0 +1,57 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.box {
+	float:left;
+}
+
+.red {
+	background-color: red;
+}
+
+.yellow {
+	background-color: yellow;
+}
+
+.green {
+	background-color: green;
+}
+
+.blue {
+	background-color: blue;
+}
+
+/*.navy {
+	background-color: navy;
+}*/
+
+div:nth-child(5) {
+	background-color: teal;
+}
+
+@media screen and (max-width:500px) { 
+	.box {
+		width: 80%;
+		margin: 5px;
+	}
+}
+
+@media screen and (min-width:501px) { 
+	.box {
+		width: 30%; 
+		margin: 10px;
+	}
+}
+
+@media screen and (min-width:800px) {
+	.box {
+		width: 25%;
+		margin: 20px;
+	}
+}
+
+
