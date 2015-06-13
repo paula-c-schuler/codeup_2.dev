@@ -35,9 +35,20 @@
 	// }
 
 	// identifies scalar datatype items in array
+	// foreach($things as $thing) {
+	// 	if (is_scalar($thing)) {
+	// 		echo "$thing is scalar" . PHP_EOL;
+	// 	}
+	// }
+
+	// display each element, including those nested in an array
 	foreach($things as $thing) {
-		if (is_scalar($thing)) {
-			echo "$thing is scalar" . PHP_EOL;
+		if (!is_array($thing)) {
+			echo $thing . PHP_EOL;
+		} else if (is_array($thing)) {
+			foreach($thing as $value) {
+				echo "$value is part of an array" . PHP_EOL;
+			}
 		}
 	}
 
