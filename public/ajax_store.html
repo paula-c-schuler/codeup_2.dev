@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0070)http://frontend.codeup.com/content/examples/javascript/ajax_store.html -->
-<!-- EXERCISE 05.6.1  -->
+<!-- EXERCISE 05.6.1  Note to Self: needs fail function, needs completion -->
 <html>
 <head>
     <title>Online Store</title>
@@ -59,9 +59,12 @@
     // "Data" looks for the responseTxt, 
     // not all the other properties of the returned object. 
     // "Data" is in scope in the function below.
+    // Once "done", then do stuff with "data".
     var inventory = $.get("/data/inventory.json");
     inventory.done(function(data) {
             htmlString = "";
+
+
         $(data).each(function(index, element) {
             console.log(data);
             htmlString += "<tr>";
