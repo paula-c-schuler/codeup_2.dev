@@ -24,15 +24,25 @@
 	    )
 	);
 
+	// CODE SAVED FOR PERSONAL REVIEW
 	// $book is the name assigned to the array under $bookTitle
 	// If it was written as ($books as $bookTitle), then array to string error
 	// because $bookTitle would be the VALUE of the index, which is an array
 	// ($books as $bookTitle) is ($arrayWhole as $valuesOfElements)
 	// ($books as $bookTitle => $book) is ($array as $key => $valueOfKey)
+
+	// Display book and information on each book
+	// foreach($books as $bookTitle => $bookDataArray) {
+	// 	echo $bookTitle . PHP_EOL;
+	// 	foreach($bookDataArray as $key => $value) {
+	// 		echo $key . ": " . $value . PHP_EOL; 
+	// 	}
+	// }
+
+	// Display books published after 1950
 	foreach($books as $bookTitle => $bookDataArray) {
-		echo $bookTitle . PHP_EOL;
-		foreach($bookDataArray as $key => $value) {
-			echo $key . ": " . $value . PHP_EOL; 
+		if ($bookDataArray['published'] > 1950) {
+			echo $bookTitle . PHP_EOL; 
 		}
 	}
 
