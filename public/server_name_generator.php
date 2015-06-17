@@ -1,5 +1,8 @@
 <?php 
-// EXERCISE 7.8 PHP 
+// EXERCISE 7.8 PHP WITH HTML, loops
+// Loops work. CSS not finished.
+// EXERCISE 7.9 PHP Alternative Syntax
+// not finished
 
 $nouns = [
 	'pinenuts',
@@ -42,15 +45,19 @@ $adjectivesRandom = array_rand($adjectives, 1);
  <head>
  	<link rel="stylesheet" type="text/css" href="/css/normalize.css">
  	<link rel="stylesheet" type="text/css" href="/css/server_name_generator.css">
+ 	<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
  	<meta name="viewport" content="width=device-width, initial-scale=1">
  	<title>server name generator</title>
  </head>
  <body>
  
  	<div class="container">
- 		<h1><?php echo $adjectives[$adjectivesRandom] . " " . $nouns[$nounRandom] ?></h1>
-
-
+ 		<div class="row one-fifth">
+ 			<div class="heading">The new server name is:</div>
+ 		</div>
+ 		<div class="row one-fifth">
+ 			<div class="name"><?php echo $adjectives[$adjectivesRandom] . " " . $nouns[$nounRandom]?></div> 
+ 		</div>
  	</div>
 
  </body>

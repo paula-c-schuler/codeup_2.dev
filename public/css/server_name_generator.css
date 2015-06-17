@@ -1,13 +1,31 @@
 /* EXERCISE 7.8 PHP WITH HTML plus styling */
+/* NOT FINISHED */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.container {
+    margin: 0;
+    max-width: 1200px;
+	width: 100%;
+	height: 650px;
+	padding: 200px;
+	background-color: #5A4064;
+	font-family: 'Shadows Into Light', cursive;
+}
+
+.row {
+	margin: auto;
+	height: 100px;
+	padding: 30px;
+	background-color: white;
+	opacity: 0.4;
+	/* opacity is affecting background and font both*/
+	color: black;
+	text-align: center;
+}
 
 
-
-
-/* Small devices (tablets, 768px and up) */
-@media screen and (min-width:768px) { /* ... */ }
-
-/* Medium devices (desktops, 992px and up) */
-@media screen and (min-width:992px) { /* ... */ }
-
-/* Large devices (large desktops, 1200px and up) */
-@media screen and (min-width:1200px) { /* ... */ }
