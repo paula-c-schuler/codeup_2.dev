@@ -7,7 +7,7 @@
 $myFavorites = [
 	'Cello music',
 	'Extra sharp white cheddar',
-	'Italian restaurants in Italy',
+	'Italy',
 	'Photography',
 	'Dancing',
 	'Writing',

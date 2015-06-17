@@ -1,6 +1,7 @@
 <?php 
 // EXERCISE 7.8 PHP WITH HTML, loops
-// Loops work. CSS not finished.
+// Loops work. CSS not finished. If "purple", change color to purple?
+// Next: Add a submit button option to get a new name
 // EXERCISE 7.9 PHP Alternative Syntax
 // not finished
 
