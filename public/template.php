@@ -1,13 +1,14 @@
 <?php 
 
-include '../data.php';
+// include '/data.php';
 
-foreach($myPosts as )
+
  ?>
  <!DOCTYPE html>
  <html>
  <head>
  	<link rel="stylesheet" type="text/css" href="/css/normalize.css">
+ 	<link rel="stylesheet" type="text/css" href="/css/grid.css">
  	<link rel="stylesheet" type="text/css" href="/css/template.css">
  	<title>template</title>
  </head>

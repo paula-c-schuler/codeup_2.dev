@@ -1,0 +1,65 @@
+<!-- EXERCISE 3.0 LAYOUTS -->
+<!-- NOT FINISHED -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>layouts</title>
+	<link rel="stylesheet" type="text/css" href="/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="/css/grid.css">
+	<link rel="stylesheet" type="text/css" href="/css/layouts.css">
+</head>
+<body>
+	<div class="container">
+		<header><p>I cannot figure out how to get the nav bar at the bottom of this header.</p> 
+			<p>Does it require content? A background color and required height is not satisafactory?</p> 
+			<nav>
+				<ul>
+					<li>Home</li>
+					<li>About</li>
+				</ul>	
+			</nav>
+		</header>
+
+		<aside class="one-third">
+			<div class="aside-section1">
+				<div> <a href="http://www.wired.com/">Wired</a></div>
+				<div> <a href="http://www.theatlantic.com/">The Atlantic</a></div>
+				<div> <a href="https://www.organicconsumers.org/">Organic Consumers Association</a></div>
+
+				There is a vertical-align:baseline in the CSS for this element. Is that why
+				the main's bottom is aligning with the bottom of the text in the aside element?
+				<p>Ah, apparently it is because after adding the questions, the aside element
+					moved up to a more desired location. How do I fix this? </p>
+			</div>	
+		</aside>
+
+		<main class="two-thirds">
+			<div class="image-container">
+				<img class="image" src="/img/Big-Death-Star.jpg">
+			</div>
+		
+			<section>
+				<h2>Scary Facts about the Nasty Evil Death Star</h2>
+					<div class="icons"><img src="/img/littlestdeathstar.png"></div>
+					<p>The Superlaser is the Death Star's main weapon.</p>
+					<p>The Superlaser is created by coordinating eight  
+						lasers manned by 168 gunners located in the Eye of the ship.</p>
+					<p>The Eye of the ship is a circular concave shape built around a focusing crystal.</p>
+					<p>The Eye has no defenses and requires military backup for protection.</p>
+					<div class="icons"><img src="/img/littlestdeathstar.png"></div>
+					<p>The Equatorial Trench is the large deep channel along the equator of the vessel.<br>
+						It contains many of the main systems including: <br>Landing bays, drive thrusters and tractor beams.</p>
+					<p>The surface of the Death Star is covered with thousands of buildings <br>so it looks like a massive city.</p>
+					<p>Mooring Towers dock large capital ships, from which the malicious malingering commander would sometimes control the fleet.</p>
+					<div class="icons"><img src="/img/littlestdeathstar.png"></div>
+			</section>
+			
+		</main>
+
+		<footer>
+			&copy; 2015 Paula Schuler
+		</footer>
+		
+	</div>
+</body>
+

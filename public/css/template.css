@@ -1,3 +1,5 @@
+/* EXERCISE 7.10 PHP AND HTML */
+/* NOTES ARE FOR STUDY PURPOSES */
 html {
     box-sizing: border-box;
 }
@@ -5,38 +7,56 @@ html {
     box-sizing: inherit;
 }
 
-.container {
-    margin: 0;
-    max-width: 1200px;
-}
-
 .header {
 	margin: 0;
 	width: 100%;
-	height: 200px;
-	background-color: #68B0AB;
+	height: 100px;
+	background-color: #FFECE9;
 }
 
-.navbar {
+ul {
+	list-style-type: none;
 	margin: 0;
+	padding: 0;
+	/*above three per W3c school for navbar code*/
 	width: 100%;
-	height: 40px;
-	padding: 5px;
-	background-color: #8FC089;
+	height: 30px;
+	background-color: #C1DEFC;
 }
 
-.navItems {
+li {
 	float: left;
-	height: 35px;
+	display: inline;
+}
+
+a {
+	display: block;
+    width: 120px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #C1DEFC;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    /* appears the default height is 30px */
+}
+
+a:hover {
+	background-color: #87BCF3;
 }
 
 .postRoll {
 	width: 70%;
-	background-color: #FAF3DD;
+	background-color: #F1F1F1;
 }
 
 footer {
 	width: 100%;
 	height: 40px;
-	background-color: #8FC089;
+	background-color: #C1DEFC;
+}
+
+.copyright {
+	margin-left: 20px;
 }

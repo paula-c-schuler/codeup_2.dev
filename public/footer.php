@@ -1,3 +1,3 @@
 	<footer>
-		<div class="copyright"></div>
+		<div class="copyright">© 2015 Paula Schuler</div>
 	</footer>
