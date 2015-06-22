@@ -18,6 +18,9 @@ html {
 }*/
 
 /*ROWS*/
+.row {
+    width: 100%;
+}
 
 .row:after {
     content: "";
