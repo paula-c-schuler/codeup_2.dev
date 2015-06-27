@@ -1,0 +1,52 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+    font-family: Verdana, sans serif;
+    font-size: large;
+}
+
+.container {
+    margin: auto;
+    max-width: 1200px;
+}
+
+.row {
+    width: 100%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+
+.column {
+    float: left;
+    padding: 10px;
+    width: 100%;
+
+}
+
+.one-fourth {
+    width: 25%;
+}
+
+.one-eighth {
+    width: 12.5%;
+}
+
+input {
+	border-radius: 10px;
+}
+
+#quantity {
+	width: 3rem;
+	text-align: center;
+}
+
+
+

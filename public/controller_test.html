@@ -8,11 +8,64 @@
           display: none !important;
      }
      </style>
+     <link rel="stylesheet" type="text/css" href="/css/controller_test.css">
 </head>
+
 <body ng-cloak>
 
      <script type="text/javascript" src="/js/angular.min.js"></script>
      <script type="text/javascript" src="/js/controllerTest.js"></script>
+
+     <div class="container" ng-controller="CartController as thisCart">
+     	<div class="row">
+	     	<form>
+	     		<div class="">
+	     		<input id="item" name="item" type="text" ng-model="item.description" placeholder="Create an Item to Buy">
+	     		<input id="cost" name="cost" type="text" ng-model="item.cost" placeholder="Enter the Item's Cost">
+	     		</div>
+	     	</form>
+     	</div>
+     	<!-- end of form -->
+     	<!-- begin display of shopping cart -->
+     	<div class="row headings">
+     		<div class="column one-fourth">Items</div>
+     		<div class="column one-eighth">Quantity</div>
+     		<div class="column one-eighth">Cost</div>
+     		<div class="column one-eighth">Total</div>
+     	</div>
+     	<div class="row items">
+     		<div class="column one-fourth"> {{ item.description }} </div>
+     		<div class="column one-eighth">
+     			<input id="quantity" name="quantity" type="text" ng-model="item.newItem">
+     		</div>
+     		<div class="column one-eighth"> {{ item.cost }} </div>
+     		<div class="column one-eighth"> {{ (item.newItem--0) * (item.cost--0) }}</div>
+     	</div>
+     	<div class="row subtotal">
+     		<div class="column "></div>
+     		<div class="column "></div>
+     		<div class="column "></div>
+     		<div class="column "></div>
+     	</div>
+     	<!-- <div class="row">
+     		<div class=""></div>
+     		<div class=""></div>
+     		<div class=""></div>
+     		<div class=""></div>
+     	</div> -->
+     	<!-- <div class="row">
+     		<div class=""></div>
+     		<div class=""></div>
+     		<div class=""></div>
+     		<div class=""></div>
+     	</div> -->
+     	<!-- <div class="row">
+     		<div class=""></div>
+     		<div class=""></div>
+     		<div class=""></div>
+     		<div class=""></div>
+     	</div> -->
+     </div>
 
 </body>
 </html>
