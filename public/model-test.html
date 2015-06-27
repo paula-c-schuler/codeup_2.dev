@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="modelTest">
+<head>
+     <title>design your card</title>
+     <meta charset="utf-8">
+     <style type=“text/css”>
+     [ng-cloak] {
+          display: none !important;
+     }
+     </style>
+</head>
+<body ng-cloak>
+
+     <script type="text/javascript" src="/js/angular.min.js"></script>
+     <script type="text/javascript" src="/js/modelTest.js"></script>
+
+     <h1>Design Your Card</h1>
+
+	<form id="contactCard" action="model-test.html">
+          <label for="firstName" >First Name</label>
+          <input id="firstName" name="firstName" type="text">
+          <label for="lastName" >Last Name</label>
+          <input id="lastName" name="lastName" type="text">
+          <label for="email" >Email</label>
+          <input id="email" name="email" type="text">
+          <label for="dateOfBirth" >Date of Birth</label>
+          <input id="dateOfBirth" name="dateOfBirth" type="text" placeholder="mm/dd/yyyy">
+          <label for="github" >Github Link</label>
+          <input id="github" name="github" type="text">
+          <label for"imageList">Choose Your Favorite Sport</label>
+          <select id="image" name="contactCard">
+               <option value="">Football</option>
+               <option value="">Television</option>
+               <option value="">Quidditch</option>
+          </select>
+
+     </form>
+</body>
+</html>
