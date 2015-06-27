@@ -8,7 +8,7 @@ html {
 
 /*CONTAINERS*/
 .container {
-    margin: 0;
+    margin: auto;
     max-width: 1200px;
 }
 
@@ -17,8 +17,13 @@ html {
     margin-right: -10px;
 }*/
 
+/* when you nest a row inside a column
+this pulls out the margin soo they don't touch side by side
+-10 gets full width, commented out there is default pad 10px */
+
 /*ROWS*/
 .row {
+    /* as wide as the container max */
     width: 100%;
 }
 
