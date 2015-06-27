@@ -8,6 +8,8 @@
           display: none !important;
      }
      </style>
+     <link rel="stylesheet" type="text/css" href="/css/grid.css">
+     <link rel="stylesheet" type="text/css" href="/css/model-test.css">
 </head>
 <body ng-cloak>
 
@@ -33,14 +35,26 @@
                <option value="/img/256AsSeenOnTv.png">Television</option>
                <option value="/img/256Hogwarts">Quidditch</option>
           </select>
+     </form>
 
           <!-- end of form -->
-     <div class="displayCard">
-          <p > {{ user.firstName}} {{ user.lastName }}</p>
+     <div class="displayCard one-half">
+          <div class="cardBox ">
+               <div class="displayImage">
+               <img src="{{ '/img/256Football.png' }}" alt="Football">
+               <!-- <img src="{{ '/img/256AsSeenOnTv.png' }}" alt="Television"> -->
+               <!-- <img src="{{ '/img/256Hogwarts.png' }}" alt="Quidditch, a game in the fictional story of Harry Potter."> -->
+                    <p > name {{ user.firstName }} {{ user.lastName }} <br>
+                         email {{ user.email }} <br>
+                         dateOfBirth {{ user.dateOfBirth }} <br>
+                         gitHub {{ user.github }} <br>
 
+                    </p>
+               </div>
 
+          </div>
      </div>
 
-     </form>
+     
 </body>
 </html>
