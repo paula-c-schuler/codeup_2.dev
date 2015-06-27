@@ -5,6 +5,7 @@ html {
 *, *:before, *:after {
     box-sizing: inherit;
 }
+/* Remember to link CSS files to project */
 
 /*CONTAINERS*/
 .container {
@@ -39,7 +40,6 @@ this pulls out the margin soo they don't touch side by side
     padding: 10px;
     width: 100%;
 }
-
 .one-twelfth {
     width: 8.33%;
 }
@@ -70,8 +70,17 @@ this pulls out the margin soo they don't touch side by side
 .two-thirds {
 	width: 66.1%;
 }
+
+.five-eighths {
+    width: 62.5%;
+}
+
 .three-fourths {
     width: 75%;
+}
+
+.four-fifths {
+    width: 80%;
 }
 
 /*OFFSETS*/
