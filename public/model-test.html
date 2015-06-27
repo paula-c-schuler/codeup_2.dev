@@ -16,23 +16,30 @@
 
      <h1>Design Your Card</h1>
 
-	<form id="contactCard" action="model-test.html">
+	<form id="contactCardForm" action="model-test.html">
           <label for="firstName" >First Name</label>
-          <input id="firstName" name="firstName" type="text">
+          <input id="firstName" name="firstName" type="text" ng-model="user.firstName">
           <label for="lastName" >Last Name</label>
-          <input id="lastName" name="lastName" type="text">
+          <input id="lastName" name="lastName" type="text" ng-model="user.lastName">
           <label for="email" >Email</label>
-          <input id="email" name="email" type="text">
+          <input id="email" name="email" type="text" ng-model="user.email">
           <label for="dateOfBirth" >Date of Birth</label>
-          <input id="dateOfBirth" name="dateOfBirth" type="text" placeholder="mm/dd/yyyy">
+          <input id="dateOfBirth" name="dateOfBirth" type="text" ng-model="dateOfBirth" placeholder="mm/dd/yyyy">
           <label for="github" >Github Link</label>
-          <input id="github" name="github" type="text">
+          <input id="github" name="github" type="text" ng-model="github">
           <label for"imageList">Choose Your Favorite Sport</label>
-          <select id="image" name="contactCard">
-               <option value="">Football</option>
-               <option value="">Television</option>
-               <option value="">Quidditch</option>
+          <select id="image" name="contactCard" ng-model="image">
+               <option value="/img/256Football.png">Football</option>
+               <option value="/img/256AsSeenOnTv.png">Television</option>
+               <option value="/img/256Hogwarts">Quidditch</option>
           </select>
+
+          <!-- end of form -->
+     <div class="displayCard">
+          <p > {{ user.firstName}} {{ user.lastName }}</p>
+
+
+     </div>
 
      </form>
 </body>
