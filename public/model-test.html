@@ -8,53 +8,65 @@
           display: none !important;
      }
      </style>
-     <link rel="stylesheet" type="text/css" href="/css/grid.css">
      <link rel="stylesheet" type="text/css" href="/css/model-test.css">
 </head>
+
 <body ng-cloak>
-
      <script type="text/javascript" src="/js/angular.min.js"></script>
-     <script type="text/javascript" src="/js/modelTest.js"></script>
+     <script type="text/javascript" src="/js/modelTest.js"></script>  
+     <div class="container">	
 
-     <h1>Design Your Card</h1>
+          <!-- begin form -->
+          <section class="row">
+               <form novalidate id="contactCardForm" action="model-test.html">
+                    <div class="name-and-communication one-half offset-one-fourth">
+                         
+                              <input id="firstName" name="firstName" type="text" ng-model="user.firstName" placeholder="First Name">
+                         
+                        
+                              <input id="lastName" name="lastName" type="text" ng-model="user.lastName" placeholder="Last Name">
+                         
+                   
+                        
+                              <input id="email" name="email" type="email" ng-model="user.email" placeholder="Email">
+                      
+                              <input id="github" name="github" type="url" ng-model="user.github" placeholder="Github Link">
+                        
+                    </div>
+                    <div class="row">
+                         <!-- add date picker plugin -->
+                         <label for"dateOfBirth">What Day Were You Born?</label>
+                         <input id="dateOfBirth" name="dateOfBirth" type="date" ng-model="user.dateOfBirth" placeholder="mm/dd/yyyy">
+                    </div>
+                    <div class="row">
+                         <label for"imageList">Choose Your Favorite Sport</label>
+                         <select id="image" name="contactCard" ng-model="user.image">
+                              <option value=""></option>
+                              <option value="/img/256Football.png">Football</option>
+                              <option value="/img/256AsSeenOnTv.png">Television</option>
+                              <option value="/img/256Hogwarts">Quidditch</option>
+                         </select>
+                    </div>
+               </form>
+          </section>
+               <!-- end of form -->
 
-	<form id="contactCardForm" action="model-test.html">
-          <label for="firstName" >First Name</label>
-          <input id="firstName" name="firstName" type="text" ng-model="user.firstName">
-          <label for="lastName" >Last Name</label>
-          <input id="lastName" name="lastName" type="text" ng-model="user.lastName">
-          <label for="email" >Email</label>
-          <input id="email" name="email" type="text" ng-model="user.email">
-          <label for="dateOfBirth" >Date of Birth</label>
-          <input id="dateOfBirth" name="dateOfBirth" type="text" ng-model="dateOfBirth" placeholder="mm/dd/yyyy">
-          <label for="github" >Github Link</label>
-          <input id="github" name="github" type="text" ng-model="github">
-          <label for"imageList">Choose Your Favorite Sport</label>
-          <select id="image" name="contactCard" ng-model="image">
-               <option value="/img/256Football.png">Football</option>
-               <option value="/img/256AsSeenOnTv.png">Television</option>
-               <option value="/img/256Hogwarts">Quidditch</option>
-          </select>
-     </form>
-
-          <!-- end of form -->
-     <div class="displayCard one-half">
-          <div class="cardBox ">
-               <div class="displayImage">
-               <img src="{{ '/img/256Football.png' }}" alt="Football">
-               <!-- <img src="{{ '/img/256AsSeenOnTv.png' }}" alt="Television"> -->
-               <!-- <img src="{{ '/img/256Hogwarts.png' }}" alt="Quidditch, a game in the fictional story of Harry Potter."> -->
-                    <p > name {{ user.firstName }} {{ user.lastName }} <br>
-                         email {{ user.email }} <br>
-                         dateOfBirth {{ user.dateOfBirth }} <br>
-                         gitHub {{ user.github }} <br>
-
-                    </p>
+               <!-- begin dislay of contact info card -->
+          <section class="row">
+               <div class="displayCard one-half offset-one-fourth">
+                    <div class="cardBox ">
+                         <div class="displayImage">
+                              <img ng-src="{{ user.image }}">
+                              <p class="displayName"> Your name is {{ user.firstName }} {{ user.lastName }} </p>
+                              <p class="displayEmail">Your eMail {{ user.email }} </p>
+                              <p class="displayBirth">Your birthday is {{ user.dateOfBirth | date }} </p>
+                              <p class="displayGithub">Your github is {{ user.github }} </p>
+                              <p class="displaySport">Fun! Your fav sport is {{ user.image }} </p>
+                         </div>
+                    </div>
                </div>
-
-          </div>
+          </section>
+          <!-- end display of contact info card -->
      </div>
-
-     
 </body>
 </html>
