@@ -1,4 +1,7 @@
-/* TODO: ADJUST FOR SCREEN SIZE <950 WIDE */
+/* TODO: ADJUST FOR SCREEN SIZE <950 WIDE. */
+/* TODO: Add background image for body of site 
+ * then make boxes for form and display transparent half or so
+ * to empower viewing of the soft image. */
 
 html {
     box-sizing: border-box;
@@ -11,17 +14,21 @@ html {
 
 .container {
     margin: auto;
-    max-width: 1200px;
+    max-width: 60%;
 }
 
 .row {
-    width: 100%;
+    width: 90%;
 }
 
 .row:after {
     content: "";
     display: table;
     clear: both;
+}
+
+.row .spacerRow {
+	background-color: white;
 }
 
 .three-fourths {
@@ -40,10 +47,42 @@ html {
 .row:nth-child(3) {
 	text-align: right;
 }
+.column {
+    float: left;
+    padding: 10px;
+    width: 100%;
+    border-top: 1px solid black;
+}
 
-.col4 {
-	background-color: #F5F0DE;
+.one-third {
+    width: 33.3%;
+}
+
+.one-sixth {
+    width: 16.66%;
+}
+
+#headersCol0, #headersCol1, #headersCol2, #headersCol3 {
 	font-weight: bold;
+	background-color: #EEEAE1;
+}
+
+#headersCol0 {
+	text-align: left;
+}
+
+#headersCol1 {
+	text-align: center;
+}
+
+/* Why did I lose color in the lower rows? */
+.col4 {
+	background-color: #EEEAE1;
+	font-weight: bold;
+}
+
+.items > .col0, .col1, .col2 {
+	background-color: white;
 }
 
 /* Q: Why would the numbers not move right? */
@@ -51,45 +90,28 @@ html {
 	text-align: right;
 }*/
 
-.column {
-    float: left;
-    padding: 10px;
-    width: 100%;
-    border: 1px solid black;
-}
-
-.one-fourth {
-    width: 25%;
-}
-
-.one-eighth {
-    width: 12.5%;
-}
-
 input, button {
 	border-radius: 10px;
 }
 
+/* nicely responsive */
 button {
-	margin-left: 50px;
+	margin-top: 20px;
 	background-color: green;
 	font-weight: bold;
 	color: white;
 }
 
-.headers> .col0, .col1, .col2, .col3 {
-	font-weight: bold;
-	background-color: #F5F0DE;
-}
-
-#quantityBox {
+/* long-term question? TODO: Responsive padding? */
+.quantityCells {
 	padding: 8px;
-	padding-left: 10px;
-	text-align: center;
+	/*padding-right: 10px;*/
 }
 
-#quantity {
-	width: 6rem;
+#quantityEditable {
+	width: 80%;
+	margin-right: 10px;
+	text-align: center;
 }
 
 

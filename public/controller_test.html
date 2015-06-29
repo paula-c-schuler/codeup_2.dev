@@ -28,25 +28,27 @@
      	<!-- end of form -->
 
      	<!-- begin display of shopping cart -->
-     	<div class="row headers">
-     		<div class="column col0 one-fourth">Items</div>
-     		<div class="column col1 one-eighth">Quantity</div>
-     		<div class="column col2 one-eighth">Cost</div>
-     		<div class="column col3 one-eighth">Total</div>
+     	<div class="row four-fifths" id="headers">
+               <div class="row spacerRow"><br><br></div>
+     		<div class="column col0 one-third" id="headersCol0">Items</div>
+     		<div class="column col1 one-sixth" id="headersCol1">Quantity</div>
+     		<div class="column col2 one-sixth" id="headersCol2">Cost</div>
+     		<div class="column col3 one-sixth" id="headersCol3">Total</div>
      	</div>
      	<div class="row topRow items">
-     		<div class="column one-fourth"> {{ item.description }} </div>
-     		<div id="quantityBox" class="column one-eighth">
-     			<input id="quantity" name="quantity" type="text" ng-model="item.newItem">
+     		<div class="column one-third"> {{ item.description }} </div>
+     		<div class="column one-sixth quantityCells">
+     			<input id="quantityEditable" name="quantity" placeholder="{{ item.newItem.quantity }}" ng-model="item.newItem" type="text" >
      		</div>
-     		<div class="column col2 one-eighth"> {{ item.cost }} </div>
-     		<div class="column col3 one-eighth"> {{ (item.newItem--0) * (item.cost--0) }}</div>
+     		<div class="column col2 one-sixth"> {{ item.cost }} </div>
+               <!-- The --0 in code of next line prevents null -->
+     		<div class="column col3 one-sixth"> {{ (item.newItem--0) * (item.cost--0) }}</div>
      	</div>
      	<div class="row subtotal">
-     		<div class="column "></div>
-     		<div class="column "></div>
-     		<div class="column "></div>
-     		<div class="column "></div>
+     		<div class="column one-third"></div>
+     		<div class="column one-sixth"></div>
+     		<div class="column one-sixth"></div>
+     		<div class="column one-sixth"></div>
      	</div>
      	<!-- <div class="row">
      		<div class=""></div>
