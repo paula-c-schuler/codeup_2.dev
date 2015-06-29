@@ -44,21 +44,23 @@ label {
 	display: block;
 }
 
+/* TODO: Improve positioning */
 #image {
 	display: block;
 }
 
-
-
 /* displayed address card from user data */
-.displayCard {
-	/*background-color: cyan;*/
-}
-
 p {
 	text-align: center;
 	padding-bottom: 0px;
-
 }
 
+#required {
+    width: 75%;
+}
+
+/* if field inputs are given invalid class by Angular */
+input.ng-invalid {
+    background-color: pink;
+}
 
