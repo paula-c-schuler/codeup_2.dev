@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+
+<!-- Exercise 9.1 Angular JS - expressions and directives -->
+<!-- Completed all tasks. WANT TODO: Display arrays horizontally -->
+
 <html ng-app="templateTest">
 <head>
 	<title>template test Angular</title>
@@ -8,12 +12,13 @@
           display: none !important;
      }
 
-     li:first-child {
-     	font-style: italic;
+     li   {
+          float: left;
      }
 
-     li:last-child {
-     	font-weight: bold;
+     img
+      {
+          display: inline;
      }
      </style>
 </head>
@@ -24,8 +29,29 @@
 
 	<h1>Angular, Yay!</h1>
 
-	<ul ng-repeat="num in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" ng-hide="num == 0" ng-if="num % 3 != 0">{{ num }} is divisible by 3.
+     <p>An Exercise on an Array of Images</p>
+     <!-- displays an array of images -->
+     <img ng-repeat="img in ['/img/256Football.png', '/img/256Hogwarts.png', 'img/256AsSeenOnTV.png']" src=" {{ img }} ">
+
+     <p>Another Exercise, An Array of Numbers</p>
+	<ul>
+          <li ng-repeat="num in [0,1,2,3,4,5,6,7,8,9]" ng-hide="num == 0" ng-if="num % 3 != 0">{{ num }} is divisible by 3.
+          </li>
 	</ul>
 
+     <p>Another Exercise</p>
+     <!-- ng-hide only hides the one true condition -->
+     <ul ng-repeat="letter in ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']" ng-hide="letter == 'b' "> {{ letter | uppercase }}
+     </ul>
+
+     <p>Another Exercise</p>
+     <!-- ng-if only shows the one true condition -->
+     <ul ng-repeat="letter in ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']" ng-if="letter == 'b' "> {{ letter | lowercase }}
+     </ul>
+
+     <p>Another Exercise</p>
+     <!-- ng-show only shows the one true condition, behaved the same as ng-if in this instance -->
+     <ul ng-repeat="letter in ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']" ng-if="letter == 'b' "> {{ letter | uppercase }}
+     </ul>
 </body>
 </html>
