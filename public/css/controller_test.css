@@ -1,5 +1,6 @@
 /* TODO: ADJUST FOR SCREEN SIZE <950 WIDE. */
-/* TODO: Add background image for body of site 
+/* TODO: RECODE FOR TABLE INSTEAD OF GRID.
+ * WANT TODO:Add background image for body of site 
  * then make boxes for form and display transparent half or so
  * to empower viewing of the soft image. */
 
@@ -10,6 +11,11 @@ html {
     box-sizing: inherit;
     font-family: Verdana, sans serif;
     font-size: large;
+}
+
+/* style that prevents display of Angular curly bracket syntax */
+[ng-cloak] {
+          display: none !important;
 }
 
 .container {
@@ -35,18 +41,6 @@ html {
     width: 75%;
 }
 
-/* Q: Why won't the text align in the header? */
-.row:nth-child(1) {
-	text-align: center;
-}
-
-.row:nth-child(2) {
-	text-align: right;
-}
-
-.row:nth-child(3) {
-	text-align: right;
-}
 .column {
     float: left;
     padding: 10px;
@@ -75,7 +69,6 @@ html {
 	text-align: center;
 }
 
-/* Why did I lose color in the lower rows? */
 .col4 {
 	background-color: #EEEAE1;
 	font-weight: bold;
@@ -84,11 +77,6 @@ html {
 .items > .col0, .col1, .col2 {
 	background-color: white;
 }
-
-/* Q: Why would the numbers not move right? */
-/*.row:last-child {
-	text-align: right;
-}*/
 
 input, button {
 	border-radius: 10px;
@@ -102,10 +90,8 @@ button {
 	color: white;
 }
 
-/* long-term question? TODO: Responsive padding? */
 .quantityCells {
 	padding: 8px;
-	/*padding-right: 10px;*/
 }
 
 #quantityEditable {
