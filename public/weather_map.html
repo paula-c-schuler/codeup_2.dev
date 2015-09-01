@@ -19,11 +19,15 @@
 <body>
 <div id="container">
 	<h2>Weather Application</h2>
+
+	<!-- Script fills in the location for this h3 element -->
 	<h3 id="location"></h3>
 
+	<!-- Row for population of weather results by runGetWeather function -->
 	<div id="row-forecast">
 	</div>
 	
+	<!-- Users can change location for 3-day weather forecast -->
 	<form id="search-form"> 
 		<input type="text" id="latitude" name="latitude" placeholder="Enter Latitude">
 		<input type="text" id="longitude" name="longitude" placeholder="Enter Longitude">
@@ -35,10 +39,13 @@
 </div>
 
 <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKB6XP6nFJJv5GtKLiF0OecOP5VwOXA5o"></script> -->
-<script src="https://maps.googleapis.com/maps/api/js?key=........."></script>
-<script type="text/javascript">
 
+<!-- Map API - Updated version added callback to script -->
+<script async defer 
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAM1XrAADLRNa0waSe_HzFgpx0imB6j4Us&callback=makeMap">
+</script>
+
+<script type="text/javascript">
 $(document).ready(function() {
 	myLat = 29.423017;
 	myLng = -98.48527;
@@ -52,12 +59,12 @@ $(document).ready(function() {
 	// declare variable map for global scope
 	var map; 
 
-	// Main function that gets weather API data and parses for display. 
+	// Main function that gets OpenWeatherMap API data and parses for display. 
 	var runGetWeather = function(myLat, myLng) {
 		console.log(myLat);
 		console.log(myLng);
 		$.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
-			"APPID": "d00068236e1ca2110cc252b202794ecb",
+			"APPID": "11feabc27f7df01d001f8e1b59e7899c",
 			"lat":   myLat,
 	    	"lon":   myLng,
 	    	"units": "imperial",
@@ -67,6 +74,8 @@ $(document).ready(function() {
 			console.log(data);
 			console.log(data.list);
 
+			// iterates through json data and populates the screen 
+			// beginning with the header city name
 			for ( i = 0; i < 3; i++) {
 				skyIcon = data.list[i].weather[0].icon;
 				$("h3").html(data.city.name);
