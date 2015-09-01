@@ -34,7 +34,7 @@ this pulls out the margin so they don't touch side by side
     clear: both;
 }
 
-/*COLUMNS*/
+/* COLUMNS */
 .column {
     float: left;
     padding: 10px;
