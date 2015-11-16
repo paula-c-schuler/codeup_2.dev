@@ -42,7 +42,7 @@
 
 <!-- Map API - Updated version added callback to script -->
 <script async defer 
-	src="https://maps.googleapis.com/maps/api/js?key=..........&callback=makeMap">
+	src="https://maps.googleapis.com/maps/api/js?key=....MY..API..KEY..&callback=initMap">
 </script>
 
 <script type="text/javascript">
@@ -51,9 +51,10 @@ $(document).ready(function() {
 	myLng = -98.48527;
 	
 	runGetWeather(myLat, myLng);
+	
 	// Create lat and long for our Google map/marker initial position
     myLatLng = new google.maps.LatLng(29.428459, -98.492433);
-	google.maps.event.addDomListener(window, 'load', makeMap);
+	google.maps.event.addDomListener(window, 'load', initMap);
 });
 
 	// declare variable map for global scope
@@ -65,7 +66,7 @@ $(document).ready(function() {
 		console.log(myLng);
 		$.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
 
-			"APPID": "........................................",
+			"APPID": ".....ADD OPENWEATHERMAP KEY HERE....",
 			"lat":   myLat,
 	    	"lon":   myLng,
 	    	"units": "imperial",
@@ -111,7 +112,7 @@ $(document).ready(function() {
 
 
 
-    function makeMap() {
+    function initMap() {
 		// sets map parameters
 		var mapOptions = {
 	      zoom: 8,
