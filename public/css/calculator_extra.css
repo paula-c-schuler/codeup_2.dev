@@ -16,10 +16,8 @@ html {
 
 
 #containerCalculator {
-  background-color: ####73716E;
-  margin: auto;
+  background-color: #73716E;
   margin: 0 auto;
-  width: 900px; 
   margin-top: 50px;
   border: 2px solid grey;
   border-bottom: 5px solid #666;
@@ -31,10 +29,6 @@ html {
   
 }
 
-#fieldRow1 {
-  
-}
-
 .row {
   padding-left: 2px;
 }
@@ -43,10 +37,7 @@ html {
   height: 40px;
   width: 190px;
   text-align: center;
-  border-top: 2px #fff;
-  padding-left: 2px #6C6C6C;
-  padding-right: 2px #fff;
-  padding-bottom: 2px #6C6C6C;
+  padding: 2px;
 
   
 }

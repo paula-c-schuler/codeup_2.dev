@@ -22,7 +22,7 @@
         // console.log("Listening");
     }
 
-    // Determines value of input and determines next action.
+    // Discerns value of input which determines next action.
     function buttonInputsPopulated (event)
     {
         var value = this.value;
