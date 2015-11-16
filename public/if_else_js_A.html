@@ -5,18 +5,35 @@
 	<title>if_else_exercise</title>
 </head>
 <body>
-	// ignore these lines for now
-	// just know that the variable 'color' will end up with a random value from the colors array
-	var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-	var color = colors[Math.floor(Math.random()*colors.length)];
 
+
+	<h1> This is the if-else experiment with inline JS on an HTML document </h1>
+
+
+	
+	// ignore these lines for now 
+	<br>
+	// just know that the variable 'color' will end up with a random value from the colors array 
+	<br>
+	var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']; 
+	<br>
+	var color = colors[Math.floor(Math.random()*colors.length)];
+	<br>
+	<br>
 	// TODO: change this to your favorite color from the list
+	<br>
 	var favorite = 'green'; 
 
 	
 
 
 	<script type="text/javascript">
+
+	"use strict"
+
+	var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+	var color = colors[Math.floor(Math.random()*colors.length)];
+	var favorite = 'green';
 
 	// TODO: Create a block of if/else statements to check for every color except indigo and violet.
 
@@ -50,7 +67,7 @@
 	// TODO: Using the ternary operator, conditionally log a statement that
 	//       says whether the random color matches your favorite color.
 
-	if (color == favorite) ? "This is my favorite color." :  "Whatever.";
+	(color == favorite) ? "This is my favorite color." :  "Whatever.";
 
 	</script>
 
