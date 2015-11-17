@@ -5,6 +5,7 @@
     margin: 50px auto;
     width: 500px;
     padding: 10px;
+    font-size: 10px;
 }
 
 /*  selector for all "h1" elements
@@ -26,7 +27,29 @@ em {
 }
 
 /*  selector for all "anchor" elements
-    that are a direct child of an element with class="article" */
+    that are a first child of an element with class="article" */
 .article>a {
     float:right;
 }
+/* selector for everything within any section tag with class of important*/
+section .important {
+    color: red;
+}
+/* selector for everything that is a p tag and also has a class of important*/
+p.important {
+    color: red;
+}
+/* selector for the first child of element*/
+div>article {
+    font-size: 16px;
+}
+/* this pseudo class acts on mouse hovers over the element*/
+a:hover {
+    color: brown;
+    font-size: 20px;
+}
+a:active {
+    border: 1px solid black;
+}
+
+
