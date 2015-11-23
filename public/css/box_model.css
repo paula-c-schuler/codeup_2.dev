@@ -46,7 +46,9 @@
 /*------------------------------------*\
     GENERIC
 \*------------------------------------*/
-
+/* Usually, a box would enlarge if adding
+padding around content. With the following
+code, the box stays the same size.*/
 html {
     box-sizing: border-box;
 }
@@ -62,7 +64,7 @@ body {
 }
 
 /*------------------------------------*\
-    CODE FOR LAYOUT AND POSITIONING
+    LAYOUT AND POSITIONING
 \*------------------------------------*/
 #container {
 	position: relative;
