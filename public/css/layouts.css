@@ -13,44 +13,47 @@ nav {
 	height: 50px;
 	background-color: #000000;
 	color: #E3C6FB;
-	border-bottom: 1px grey solid;
 }
 
 .nav-link {
 	list-style-type: none;
-	width: 120px;
 	height: 50px;
 	padding-top: 13px;
+	padding-right: 40px;
 	font-weight: bold;
 	float: left;
 }
+.nav-border {
+	background-color: #000;
+	width: 100%;
+	border-bottom: 1px grey solid;
+}
+
 
 aside {
 	display: inline-block;
-	background-color: #000;
-	height: 1210px;
 	margin-right: 0px;
-	padding: 50px 30px 30px 30px;
+	padding: 50px 0px 30px 30px;
 	border-radius: 3px;
 	float: left;
+	background-color: #000;
 	color: white;
+	/*overflow: hidden;*/
+	z-index: 0;
 }
 
 .aside-section1>p {
 	margin: 0;
 	padding: 0.5rem;
 }
-.aside-section1>p:last-child {
-	padding-bottom: 3rem;
-	border-bottom: 1px solid grey;
-}
 
 h1 {
 	color: #E3C6FB;
+	font-size: 2.5rem;
 }
 h3 {
 	margin-top: 0.5rem;
-	padding-top: 0.5rem;
+	padding-top: 1.25rem;
 	border-top: 1px grey solid;
 	color: #E3C6FB;
 }
@@ -63,10 +66,13 @@ a:hover {
 	color: #E3C6FB;
 }
 .aside-section2 {
-	padding-top: 2.5rem;
-	color: grey;
+	padding-top: 2rem;
 	padding-bottom: 0;
 	margin-bottom: 0;
+	color: grey;
+}
+.aside-section2-text {
+	line-height: 1.5rem;
 }
 
 main {
@@ -87,11 +93,16 @@ section {
 	color: white;
 }
 
-.aside-2 {
-
-}
-
 
 footer {
+	padding-top: 1.5rem;
+	color: grey;
+	z-index: 100;
+	border-top: 1px solid grey;
+	text-align: center;
+}
+.fa {
+	display: inline;
+	padding-right: 15px;
 	color: #E3C6FB;
 }
