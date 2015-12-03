@@ -26,6 +26,7 @@ this pulls out the margin soo they don't touch side by side
 .row {
     /* as wide as the container max */
     width: 100%;
+    margin: 0;
 }
 
 .row:after {
