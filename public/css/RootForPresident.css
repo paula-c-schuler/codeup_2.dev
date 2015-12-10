@@ -9,6 +9,7 @@ body {
 	background-color: #E7E7E7;
 }
 
+
 nav {
 	margin: 0;
 	width: 100%;
@@ -28,12 +29,13 @@ nav>ul>li {
 	float: left;
 	display: inline;
 	padding-top: 10px;
-	margin-left: 20px;
 	color: #777;
 	text-decoration: underline;
 }
 #logo {
+	margin-left: 20px;
 	text-decoration: none;
+
 }
 
 a {
@@ -52,19 +54,51 @@ a:hover {
 	background-color: #87BCF3;
 }
 
+.image-container {
+	background-color: black;
+	padding: 0;
+}
+img {
+	display:  block;
+	margin: 0 auto;
+}
+.image-headline {
+	font-size: 2rem;
+	color: #F3F3F3;;
+	text-align: center;
+}
+
+form {
+	background-color: grey;
+}
+
+/*input,
+select {
+	font-size: 1rem;
+	padding: 5px;
+	margin-right: 25px;
+}*/
+#email, #zip, #state, #submit {
+	font-size: 1rem;
+	padding: 5px;
+	margin-right: 25px;
+}
+ 
+
+
+
+
 
 aside {
-	float: right;
 	color: #777;
 }
 
 
 footer {
+	margin-top: 20px;
 	width: 100%;
 	height: 10rem;
 	padding: 2rem;
-	/*height: 100px;*/
-	/*background-color: #C1DEFC;*/
 	background-color: #1B2F90;
 }
 footer>p {
