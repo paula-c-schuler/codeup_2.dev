@@ -41,71 +41,76 @@
 <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
 
 <!-- Map API - Updated version added callback to script -->
-
+<script	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxUSItzykbT3kW7x2tl-wR3XDx9KPiskE"></script>
 
 <script type="text/javascript">
+"use strict";
+var myLat = 29.423017;
+var myLng = -98.48527;
+var myLatLng = new google.maps.LatLng(29.428459, -98.492433);
+var htmlString = "";
 $(document).ready(function() {
-	myLat = 29.423017;
-	myLng = -98.48527;
-	
+
 	runGetWeather(myLat, myLng);
-	
-	// Create lat and long for our Google map/marker initial position
-    myLatLng = new google.maps.LatLng(29.428459, -98.492433);
 	google.maps.event.addDomListener(window, 'load', initMap);
+
 });
 
-	// declare variable map for global scope
-	var map; 
+// declare variable map for global scope
+var map;
 
-	// Main function that gets OpenWeatherMap API data and parses for display. 
-	var runGetWeather = function(myLat, myLng) {
-		console.log(myLat);
-		console.log(myLng);
-		$.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+// Main function that gets OpenWeatherMap API data and parses for display. 
+var runGetWeather = function(myLat, myLng) {
+	console.log(myLat);
+	console.log(myLng);
+	$.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+		"APPID": "f3823df8f301dd6bdebe2aef785c1576",
+		"lat":   myLat,
+    	"lon":   myLng,
+    	"units": "imperial",
+		"cnt": 3
+	}).done(function(data) {
+		htmlString = "";
+		console.log(data);
+		console.log(data.list);
 
-			"APPID": "f3823df8f301dd6bdebe2aef785c1576",
-			"lat":   myLat,
-	    	"lon":   myLng,
-	    	"units": "imperial",
-			"cnt": 3
-		}).done(function(data) {
-			htmlString = "";
-			console.log(data);
-			console.log(data.list);
+		// iterates through json data and populates the screen 
+		// beginning with the header city name
+		var skyIcon;
+		for (var i = 0; i < 3; i++) {
+			skyIcon = data.list[i].weather[0].icon;
+			$("h3").html(data.city.name);
+			htmlString += "<div class='weatherboxes'>";
+			htmlString += "<p><span class='bold' id='temp'>" + data.list[i].temp.max + "°/" + data.list[i].temp.min + "°" + "</span></p>";
+			htmlString += "<p id='image'><img src=http://openweathermap.org/img/w/" + skyIcon + ".png></p>"; 
+			htmlString += "<p>" + "<span class='bold'>Clouds:</span> " + data.list[i].weather[0].main + "</p>";
+			htmlString += "<p>" + "<span class='bold'>Humidity:</span> " + data.list[i].humidity + "</p>";
+			htmlString += "<p>" + "<span class='bold'>Wind:</span> " + data.list[i].speed + "</p>";
+			htmlString += "<p>" + "<span class='bold'>Pressure:</span> " + data.list[i].pressure + "</p>";
+		    htmlString += "</div>";
+		    $("#row-forecast").html(htmlString);
+	    }	
+	}).fail(function() {
+		alert("fail");
+	});
+}
 
-			// iterates through json data and populates the screen 
-			// beginning with the header city name
-			for ( i = 0; i < 3; i++) {
-				skyIcon = data.list[i].weather[0].icon;
-				$("h3").html(data.city.name);
-				htmlString += "<div class='weatherboxes'>";
-				htmlString += "<p><span class='bold' id='temp'>" + data.list[i].temp.max + "°/" + data.list[i].temp.min + "°" + "</span></p>";
-				htmlString += "<p id='image'><img src=http://openweathermap.org/img/w/" + skyIcon + ".png></p>"; 
-				htmlString += "<p>" + "<span class='bold'>Clouds:</span> " + data.list[i].weather[0].main + "</p>";
-				htmlString += "<p>" + "<span class='bold'>Humidity:</span> " + data.list[i].humidity + "</p>";
-				htmlString += "<p>" + "<span class='bold'>Wind:</span> " + data.list[i].speed + "</p>";
-				htmlString += "<p>" + "<span class='bold'>Pressure:</span> " + data.list[i].pressure + "</p>";
-			    htmlString += "</div>";
-			    $("#row-forecast").html(htmlString);
-		    }	
-		}).fail(function() {
-			alert("fail");
-		});
-	}
-
-
+	
 	// Listens to user and calls ajax request with new user input
+	// var makeMap = function(){};
 	$("#search-form").submit(function (e) {
 		// Below prevents form's sending data to server
 		e.preventDefault();
 		var myLat = $("#latitude").val();
 		var myLng = $("#longitude").val();
-		var myLatLng = new google.maps.LatLng(myLat, myLng);
 		console.log(myLatLng + " in listener");
+		function initMap2(myLatLng){
+			var myLatLng = new google.maps.LatLng(myLat, myLng);
+
+		}
 		    
 		runGetWeather(myLat, myLng);
-		makeMap(myLatLng);
+		initMap2(myLatLng);
 	});
 
 
@@ -130,10 +135,6 @@ $(document).ready(function() {
 	    });
 	}
 
-</script>
-
-<script async defer 
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxUSItzykbT3kW7x2tl-wR3XDx9KPiskE&callback=initMap">
 </script>
 </body>
 </html>
