@@ -16,24 +16,30 @@ for (i = 0; i < 50; i++) {
 	}
 }
 
-// also can be written as 
+/*
+*also can be written as 
+*
+*for (i = 1; i < 50; i+=2) {
+*	console.log ("This is an odd number.")
+*	}
+*}
+*/
 
-// for (i = 1; i < 50; i+=2) {
-// 	console.log ("This is an odd number.")
-// 	}
-// }
+/*
+*to not print the random number
+*for (i = 1; i < 50; i++) {
+*	if (math == i) {
+*		console.log ("Yikes, skip this one!")
+*
+*		continue; 
+*		
+*	} else if (i % 2 != 0) {
+*		console.log ("This is an odd number: " + i);
+*	}
+*}
+*
+*/
 
-// // to not print the random number
-// for (i = 1; i < 50; i++) {
-// 	if (math == i) {
-// 		console.log ("Yikes, skip this one!")
-
-// 		continue; 
-		
-// 	} else if (i % 2 != 0) {
-// 		console.log ("This is an odd number: " + i);
-// 	}
-// }
 
 /* also can be written as 
  *	do {
@@ -46,3 +52,4 @@ for (i = 0; i < 50; i++) {
  *		}
  *	}
  */
+ 

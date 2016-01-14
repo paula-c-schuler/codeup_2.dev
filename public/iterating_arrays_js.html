@@ -16,25 +16,25 @@ var names = ['Rodney', 'Corey', 'Cameron', 'Mason'];
 console.log (names.length);
 
 
-// Create log statements that will print each of the names array elements individuallY
+// Create log statements that will print each of the names array elements individually
 // NEXT, create a for loop to iterate through and printout the elements. 
 
 for (i = 0; i < names.length; i++) {
-	console.log("The first name of the array is " + names[i] + ".");
+	console.log("The first name is " + names[i] + ".");
 
 }
 
 //NEXT, use a forEach loop to achieve the same results as the for loop
 
 names.forEach(function(element, index, names) {
-	console.log("The first name of the array is " + element + ".");
+	console.log("The first name is " + element + ".");
 });
 
-
-console.log("The first name of the array is " + names[0] + ".");
-console.log("The first name of the array is " + names[1] + ".");
-console.log("The first name of the array is " + names[2] + ".");
-console.log("The first name of the array is " + names[3] + ".");
+// The below can be logged here because names is a global variable. 
+console.log("The first name is " + names[0] + ".");
+console.log("The first name is " + names[1] + ".");
+console.log("The first name is " + names[2] + ".");
+console.log("The first name is " + names[3] + ".");
 </script>
 
 </body>
