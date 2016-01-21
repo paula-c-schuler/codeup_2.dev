@@ -11,38 +11,51 @@
 
 books = [
 	{
+        "id": 1,
         "title": "Charlotte\'s Webb",
+
         "author":
         {
-        	"firstName": "I",
-        	"lastName": "Forgot"
+        	"firstName": "Nobody",
+        	"lastName": "Knows"
         }
     },
+
     {
+        "id": 2,
         "title": "Harry Potter Series",
+
         "author": 
         {
         	"firstName": "JK",
         	"lastName": "Rowling"
         }
     },
+
     {
-    	"title": "Nameless Book",
+        "id": 3,
+    	"title": "Game of Thrones",
+
     	"author": 
     	{
     		"firstName": "Cannot",
     		"lastName": "Remember"
     	}
     },
+
     {
+        "id": 4,
     	"title": "Truth",
+
     	"author": 
     	{
     		"firstName": "Mahatma",
     		"lastName": "Gandhi"
     	}
     },
+
     {
+        "id": 5,
     	"title": "The Autobiography of Benjamin Franklin",
     	"author": 
     	{
@@ -53,10 +66,12 @@ books = [
 ],
 console.log(books);
 
+/*
+Loop through the array of books using .for
+and print out the specified information about each one.
+*/
+/*
 
-
-// Loop through the array of books using .for
-// and print out the specified information about each one.
 i = 0;
 for (i = 0; i < books.length; i++)
 {
@@ -65,7 +80,37 @@ for (i = 0; i < books.length; i++)
 	console.log("Author: " + books[i].author.firstName + " " + books[i].author.lastName);
 	console.log("---------------");
 }
+*/
+
+
+/*
+Loop through the array of books using .forEach
+and print out the specified information about each one.
+Print the information onto the web page and the console.
+IT WORKS, but the page output is linear, not formatted pretty. 
+*/
+
+function showResults (value, index, argument) {
+    console.log("Book #" + books[index].id);
+    console.log("Title: " + books[index].title);
+    console.log("Author: " + books[index].author.firstName + " " + books[index].author.lastName);
+    console.log("---------------");
+    document.write("Book #" + books[index].id);
+    document.write("Title: " + books[index].title);
+    document.write("Author: " + books[index].author.firstName + " " + books[index].author.lastName);
+    document.write("---------------");
+    document.write("Book #" + books[index].id + " is " + books[index].title + 
+        ", written by " + books[index].author.firstName + " " + books[index].author.lastName);
+}
+books.forEach(showResults);
+
+
+
+
 
 	</script>
 </body>
 </html>
+
+.forEach
+

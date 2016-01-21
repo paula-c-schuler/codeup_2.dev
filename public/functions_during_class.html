@@ -4,20 +4,34 @@
 	<title>functions_during_class</title>
 </head>
 <body>
-<script type="text/javascript">
 
-// Change a string to uppercase
+<input >
+
+
+
+
+<script type="text/javascript">
+"use strict";
+(function)(){
+
+
+/*
+WORKS
+.toUpperCase is a function on its own
+
+Change a string to uppercase
 var myString = "this is cool";
 console.log(myString);
 
 var madeUpperCase;
 madeUpperCase = myString.toUpperCase();
 console.log(madeUpperCase);
+*/
 
 
-
-
-// Concatenate three words
+/*
+WORKS
+Concatenate three words
 var first = "one";
 var second = "two";
 var third = "three";
@@ -27,25 +41,105 @@ function makeThreeWordsTogether(first, second, third) {
 }
 makeThreeWordsTogether(first, second, third);
 console.log(threeWordsTogether);
+*/
+
+/*
+WORKS
+Change Farenheit to Celcius
+var tempF = prompt("What is the temp in SA?");
+var convertToCelcius = function (tempF) {
+	var tempC;
+	tempC = (tempF - 32) / 1.8;
+	console.log(tempF + " " + tempC);
+}
+convertToCelcius(tempF);
+*/
 
 
-// Change Farenheit to Celcius
+/*
+WORKS
+Change pounds to kilograms
+var mass = prompt("How much does the cat weigh?");
+console.log(mass);
+var poundsToKilogram = function poundsToKilogram (number) {
+	console.log(number + " is number in function");
+	var kilograms;
+	kilograms = number * 0.45
+	console.log( "The cat weights " + kilograms + " kilograms");
+}
+poundsToKilogram(mass);
+*/
+
+/*
+WORKS
+Make sure a string is between 5 and 10 characters long
+
+var userString = prompt("Tell me your middle name");
+console.log(userString);
+var validateString = function (string) {
+	 
+	if (5 < string < 10){
+		console.log("true");
+	} else {
+		console.log("false");
+	}
+}
+validateString(userString);
+*/
+
+/*
+WORKS
+Determine if a given letter is a vowel
 
 
+var vowel = [a, e, i, o, u];
+var userLetter = prompt("Enter a single letter of the alphabet");
+var validateLetter = function (userLetter){
+	if (userLetter == a || userLetter == e || 
+		userLetter == i || userLetter == o || 
+		userLetter == u){
+		console.log("Your letter " + letter + " is a vowel.");
+	} else {
+		console.log("false, no vowel");
+	}
+}
+validateLetter(userLetter);
+*/
 
-// Change pounds to kilograms
+
+/*
+COOL - USE -1 AS FALSE VALUE
+REFACTORED BELOW
+var vowel2 = [a,e,i,o,u,A,E,I,O,U];
+var newLetter = prompt("Enter a letter");
+var isVowel (vowel2) {
+	if (vowel2.indexOf(vowel2) > -1) {
+		console.log("is a vowel");
+	} else {
+		console.log("is not a vowel");
+	}
+}
 
 
+var vowel2 = [a,e,i,o,u,A,E,I,O,U];
+var newLetter = prompt("Enter a letter");
+var isVowel (vowel2) {
+	return (vowel2.indexOf(vowel2) > -1) ? true : false; 
+	}
+}
+console.log(isVowel(vowel2));
 
-// Make sure a string is between 5 and 10 characters long
-
-
-
-// Determine if a given letter is a vowel
-
-
+if(isVowel('z')) {
+	console.log("this is vowel");
+} else {
+	console.log("this is not");
+}
+*/
 
 // document.write();   will write to the document
+
+}();
+
 </script>
 </body>
 </html>
