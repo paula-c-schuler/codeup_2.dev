@@ -1,0 +1,72 @@
+<!-- 04.7.4 APOLLO Google Maps API -->
+
+<!-- WANT TODO:  Make national map with pins where my family live.  -->
+
+<html>
+<head>
+
+  <style type="text/css">
+  #map-canvas {
+    margin: auto;
+    width: 320px;
+    height: 480px;
+  }
+  </style>
+
+</head>
+<body>
+
+      <div id="map-canvas"></div>
+ 
+        <!-- Codeup curriculum version -->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD37MAqStpf7MYHvssO_q40jq5YwkYbgXc"></script>
+
+      <script type="text/javascript">
+        var address = "600 Navarro, San Antonio, TX";
+        var geocoder = new google.maps.Geocoder();
+
+        // call geocoder geocode (an object and method) 
+        //and it takes in a JSON and a callback function that takes 2 parameters
+
+        // NOTE TO SELF: Object geocoder's method .geocode takes in a JSON key using the
+        // var address defined above as value. AFTER that is set up, THEN the callback function
+        // (which is the second parameter) begins to run. That function is the rest of the code 
+        // down to the last line.  
+
+        geocoder.geocode(  { "address": address} , function( results, status )  {
+            console.log("Geocoder finished");
+            console.log(results);
+            if (status == google.maps.GeocoderStatus.OK) {
+                console.log("status is ok");
+                map.setCenter(results[0].geometry.location);
+
+                // place a marker ... it takes in a JSON
+                var marker = new google.maps.Marker ( {
+                    "position": results[0].geometry.location, //"results" is what decides
+                    "map": map                                // specify (in case have 2+ maps)
+                } );
+
+
+                var myOwnInfoWindowObject = new google.maps.InfoWindow( {
+                    "content":"Changing the world, one programmer at a time."
+                } );
+                myOwnInfoWindowObject.open(map, marker);          
+            }
+        });
+
+        // Set our map options in a JSON object
+        var mapOptions = {
+          zoom: 18,
+          center: { 
+            lat: 29.4284595, 
+            lng: -98.492433 }
+        };
+
+        // Render the map
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+
+      </script>
+
+    </body>
+</html>

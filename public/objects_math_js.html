@@ -1,3 +1,7 @@
+ /* 
+ NOTE TO SELF: There are functions inside the objects inside the object. Cool.
+ */
+
 <html>
 <head>
 	<title>Objects Math JS</title>
@@ -11,32 +15,39 @@
 	    radius: 3,
 	    getArea: function () 
 	    {
+	    	var area = 0;
 	        squaredRadius = Math.pow(circle.radius, 2);
 	        console.log(squaredRadius);
-	        area = 0;
 	        area = Math.PI * squaredRadius;
 	        console.log(area);
+
+	        // OR 
+	        var area = Math.PI * (Math.pow(circle.radius, 2));
 	        return area;
 	    },
 	    getCircumference: function (radius) 
 	    {
 	    	diameter = radius + radius;
 	    	circumference = Math.PI(diameter);
-	    	console.log(circumference);
+	    	console.log("Circumference of the circle is " + circumference);
 	    	return circumference;
 	    },
-
 	    //If round is true, round the result to the nearest integer.
 	    logInfo: function (round) 
 	    {
 	        var rounded = Math.round(this.getArea());
-	        console.log(rounded);
-	        console.log('Area of a circle with radius: ' + this.radius + ' is: ' + rounded);
+	        console.log('Area of the circle with radius: ' + 
+	        	this.radius + ' is: ' + rounded);
 	    }
 	};
-
-circle.logInfo(false);
+// circle.logInfo(false);
 circle.logInfo(true);
+
+console.log
+
+
+
+
 
 	</script>
 </body>
