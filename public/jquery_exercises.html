@@ -29,18 +29,20 @@
 		<script type="text/javascript">
 		$(document).ready(function() 
 		{
+			"use strict";
 			var success = "success"
 			alert( 'The DOM has finished loading!' ); 
-			$('h1').click(function() 
-			{
-				console.log(success);
+			$('h1').click(function() {
+				// console.log(success);
 				$(this).css("background-color", "blue");
 			});
+
 			$('p').dblclick(function() 
 			{
-				console.log(success);
+				// console.log(success);
 				$('p').css("font-size", "18px");
 			});
+
 			$('li').hover(
 				function() 
 				{
@@ -49,12 +51,12 @@
 				function () 
 				{
 					$(this).css("color", "yellow");
-				},
-				{
-					// $(this).css("color", "red");
-				});
+			});
+
+
+
+
 		});
-		
 		</script>
 	</body>
 </html>
