@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather in class</title>
+</head>
+<body>
+	
+<script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+	"use strict";
+	$.get("http://api.openweathermap.org/data/2.5/weather", {
+    APPID: "f3823df8f301dd6bdebe2aef785c1576",
+    q:    "San Antonio, TX"
+	}).done(function(data) {
+		console.log(data);
+
+	});
+
+
+
+</script>
+
+</body>
+</html>
