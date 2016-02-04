@@ -1,5 +1,5 @@
-// function () {
-//     "use strict";
+function () {
+    "use strict";
 
 // EXERCISE 4.7.3
 
@@ -75,6 +75,6 @@
             fieldRight.value = "";
         }
     }
-// }
+};
 
 
