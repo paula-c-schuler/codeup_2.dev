@@ -40,20 +40,22 @@
 
 <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
 
-<!-- Map API - Updated version added callback to script -->
-
+<!-- Map API (must go ahead of functions)-->
+<script  
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxUSItzykbT3kW7x2tl-wR3XDx9KPiskE">
+</script>
 
 <script type="text/javascript">
 $(document).ready(function() {
 	myLat = 29.423017;
 	myLng = -98.48527;
 	
-	runGetWeather(myLat, myLng);
+	// runGetWeather(myLat, myLng);
 	
 	// Create lat and long for our Google map/marker initial position
     myLatLng = new google.maps.LatLng(29.428459, -98.492433);
 	google.maps.event.addDomListener(window, 'load', initMap);
-});
+
 
 	// declare variable map for global scope
 	var map; 
@@ -93,6 +95,7 @@ $(document).ready(function() {
 			alert("fail");
 		});
 	}
+	runGetWeather(myLat, myLng);
 
 
 	// Listens to user and calls ajax request with new user input
@@ -129,11 +132,9 @@ $(document).ready(function() {
 	      draggable: true
 	    });
 	}
-
+});
 </script>
 
-<script async defer 
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxUSItzykbT3kW7x2tl-wR3XDx9KPiskE&callback=initMap">
-</script>
+
 </body>
 </html>
