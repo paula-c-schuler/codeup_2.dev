@@ -1,5 +1,6 @@
 <?php
 /**
+ * CODE INCLUDED BY GEORGE HASKELL FOR EXERCISE, MIMICS DATABASE
  * Kick off the session, always return "JSON" data, and switch our timezone over to Central Time
  * Realistically the last part should be done through a config,
  * but hard coding here makes students' lives easier

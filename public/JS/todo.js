@@ -4,10 +4,12 @@ console.log("document loaded");
 		event.preventDefault();
 		var content = $("#content").val();
 		var priority = $("#priority").val();
-		var due = $("#dueDate").val();
-
+		var dateListed = $("#due_date").val();
+		var rowString;
+		
 		var data = {
-			"content":content
+			"content":content,
+			"priority": priority
 		};
 		$.post("todo-json.php", data, function(item){
 			console.log(item);
@@ -18,6 +20,9 @@ console.log("document loaded");
 		event.preventDefault();
 		$.get("todo-json.php", function(items){
 			console.log(items);
-		});
+			headerString = "";
+			
+			$('#resultsRows').html(rowString);
+		})
 	});
 });
