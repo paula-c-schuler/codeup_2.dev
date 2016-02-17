@@ -6,7 +6,7 @@ console.log("document loaded");
 		var priority = $("#priority").val();
 		var dateListed = $("#due_date").val();
 		var rowString;
-		
+
 		var data = {
 			"content":content,
 			"priority": priority
@@ -20,7 +20,14 @@ console.log("document loaded");
 		event.preventDefault();
 		$.get("todo-json.php", function(items){
 			console.log(items);
-			headerString = "";
+			rowString = "";
+			rowString += "<tr>" + 
+						"<td>" +
+							items.content + 
+						"</td>" +
+						"<td>" + 
+							items.priority + 
+						"</td>";
 			
 			$('#resultsRows').html(rowString);
 		})
