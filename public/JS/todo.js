@@ -20,7 +20,7 @@ console.log("document loaded");
 		event.preventDefault();
 		$.get("todo-json.php", function(items){
 			items.forEach(function(element,index){
-				console.log("In function");
+				console.log(items[0].content);
 
 
 			})
