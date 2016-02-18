@@ -13,28 +13,30 @@ console.log("document loaded");
 		};
 		$.post("todo-json.php", data, function(item){
 			console.log(item);
+			console.log(item.content);
 		});
 	});
 
 	$('#btn-show-items').click(function(event){
 		event.preventDefault();
 		$.get("todo-json.php", function(items){
-			items.forEach(function(element,index){
-				console.log(items[index].content);
+			for(var i = 0; i < items.length; i++){
+			// items.forEach(function(element,index){
+				console.log(items[i].content);
 				console.log(items.length);
 				console.log(items.priority);
 				rowString = "";
 				rowString += "<tr>" + 
 						"<td>" +
-							items[index].content + 
+							items[i].content + 
 						"</td>" +
 						"<td>" + 
-							items[index].priority + 
+							items[i].priority + 
 						"</td>" +
 						"</tr>";
 			
 			$('#resultsRows').html(rowString);
-			})
+			}
 		})
 	});
 });
