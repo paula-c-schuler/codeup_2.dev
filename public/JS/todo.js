@@ -18,8 +18,11 @@ console.log("document loaded");
 
 	$("#btn-show-items").click(function(event){
 		event.preventDefault();
-		$.get("todo-json.php", function(items){
-			console.log(items);
+		$.get("todo-json.php").done (function(items){
+			console.log("These are my items " + items);
+			items.forEach(element,index,array) {
+				console.log('The shape at index ' + index + ' is: ' + element);
+			});
 			rowString = "";
 			rowString += "<tr>" + 
 						"<td>" +
@@ -27,7 +30,8 @@ console.log("document loaded");
 						"</td>" +
 						"<td>" + 
 							items.priority + 
-						"</td>";
+						"</td>" +
+						"</tr>";
 			
 			$('#resultsRows').html(rowString);
 		})
