@@ -63,9 +63,7 @@
     // Once "done", then do stuff with "data".
     var inventory = $.get("/data/inventory.json");
     inventory.done(function(data) {
-            htmlString = "";
-
-
+        htmlString = "";
         $(data).each(function(index, element) {
             console.log(data);
             htmlString += "<tr>";
