@@ -19,25 +19,22 @@ console.log("document loaded");
 	$('#btn-show-items').click(function(event){
 		event.preventDefault();
 		$.get("todo-json.php", function(items){
-			items.forEach(function(element,i){
-				console.log(items[i].content);
-
-
+			items.forEach(function(element,index){
+				console.log(items[index].content);
+				console.log(items.length);
+				console.log(items.priority);
+				rowString = "";
+				rowString += "<tr>" + 
+						"<td>" +
+							items[index].content + 
+						"</td>" +
+						"<td>" + 
+							items[index].priority + 
+						"</td>" +
+						"</tr>";
+			
+			$('#resultsRows').html(rowString);
 			})
-			
-			// console.log(items.length);
-			// console.log(items.priority);
-			// rowString = "";
-			// rowString += "<tr>" + 
-			// 			"<td>" +
-			// 				items.content + 
-			// 			"</td>" +
-			// 			"<td>" + 
-			// 				items.priority + 
-			// 			"</td>" +
-			// 			"</tr>";
-			
-			// $('#resultsRows').html(rowString);
 		})
 	});
 });
