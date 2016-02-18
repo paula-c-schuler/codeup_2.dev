@@ -1,6 +1,6 @@
 $(document).ready(function(){
 console.log("document loaded");
-	$("#btn-new-item").click(function(event){
+	$('#btn-new-item').click(function(event){
 		event.preventDefault();
 		var content = $("#content").val();
 		var priority = $("#priority").val();
@@ -16,24 +16,28 @@ console.log("document loaded");
 		});
 	});
 
-	$("#btn-show-items").click(function(event){
+	$('#btn-show-items').click(function(event){
 		event.preventDefault();
-		$.get("todo-json.php").done (function(items){
-			console.log("These are my items " + items);
-			items.forEach(element,index,array) {
-				console.log('The shape at index ' + index + ' is: ' + element);
-			});
-			rowString = "";
-			rowString += "<tr>" + 
-						"<td>" +
-							items.content + 
-						"</td>" +
-						"<td>" + 
-							items.priority + 
-						"</td>" +
-						"</tr>";
+		$.get("todo-json.php", function(items){
+			items.forEach(function(element,index){
+				console.log("In function");
+
+
+			})
 			
-			$('#resultsRows').html(rowString);
+			// console.log(items.length);
+			// console.log(items.priority);
+			// rowString = "";
+			// rowString += "<tr>" + 
+			// 			"<td>" +
+			// 				items.content + 
+			// 			"</td>" +
+			// 			"<td>" + 
+			// 				items.priority + 
+			// 			"</td>" +
+			// 			"</tr>";
+			
+			// $('#resultsRows').html(rowString);
 		})
 	});
 });
