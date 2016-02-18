@@ -19,8 +19,8 @@ console.log("document loaded");
 	$('#btn-show-items').click(function(event){
 		event.preventDefault();
 		$.get("todo-json.php", function(items){
-			items.forEach(function(element,index){
-				console.log(items[0].content);
+			items.forEach(function(element,i){
+				console.log(items[i].content);
 
 
 			})
